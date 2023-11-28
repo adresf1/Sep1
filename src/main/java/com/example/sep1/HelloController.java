@@ -1,44 +1,47 @@
 package com.example.sep1;
 
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 
 import static javafx.scene.paint.Color.rgb;
 
-public class HelloController {
-    @FXML private Button login;
-    @FXML  private TextField username;
-
-    @FXML private Label password;
-
-    @FXML private Label resp;
+public class HelloController
+{
+    @FXML private Button button;
+    @FXML private TextField username;
+    @FXML private PasswordField Password;
     @FXML private Button cancel;
+    @FXML private Label resp;
 
-    private LoginModel login1 = new LoginModel();
 
-    public void OnButtonpressed()
+    private LoginModel model1 = new LoginModel();
+    private Paint rgb;
+
+    public void OnButtonPressed()
     {
         String input = username.getText();
-        String pass = password.getText();
-        if (login1.login(input, pass))
+        String pass = Password.getText();
+        if (model1.login(input, pass))
         {
             resp.setText("You have logged in seccesfully");
             resp.setTextFill(rgb(0, 255, 0));
         }
         else
         {
-            resp.setText("Wronggg, try again");
+            resp.setText("Wrong, try again");
             resp.setTextFill(rgb(255, 0, 0));
         }
     }
+
     public void cancelaction()
     {
         username.setText(null);
-        password.setText(null);
+        Password.setText(null);
         resp.setText("Try again");
     }
-
-
 }
