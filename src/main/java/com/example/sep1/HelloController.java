@@ -29,7 +29,7 @@ public class HelloController {
         }
         else
         {
-            resp.setText("Wrongg, try again");
+            resp.setText("Wronggg, try again");
             resp.setTextFill(rgb(255, 0, 0));
         }
     }
