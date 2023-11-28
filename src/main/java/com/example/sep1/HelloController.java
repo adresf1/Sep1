@@ -30,6 +30,7 @@ public class HelloController
         {
             resp.setText("You have logged in seccesfully");
             resp.setTextFill(rgb(0, 255, 0));
+            Oversigt frontPage = new Oversigt();
         }
         else
         {
