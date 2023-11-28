@@ -2,6 +2,9 @@ package com.example.sep1;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -20,7 +23,7 @@ public class HelloController
     @FXML private PasswordField Password;
     @FXML private Button cancel;
     @FXML private Label resp;
-    private Oversigt oversigt;
+
 
 
     private LoginModel model1 = new LoginModel();
@@ -31,9 +34,16 @@ public class HelloController
         String pass = Password.getText();
         if (model1.login(input, pass)) {
 
-            resp.setText("You have logged in successfully");
-            resp.setTextFill(rgb(0, 255, 0));
 
+
+            FXMLLoader fxmlLoader = new FXMLLoader(Oversigt.class.getResource("Oversigt.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage oversigt = new Stage();
+
+            oversigt.setTitle("Oversigt");
+            oversigt.setScene(new Scene(root, 1000, 800));
+
+            oversigt.show();
         } else {
             resp.setText("Wrong, try again");
             resp.setTextFill(rgb(255, 0, 0));
