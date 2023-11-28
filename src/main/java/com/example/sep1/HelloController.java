@@ -34,7 +34,8 @@ public class HelloController
         String pass = Password.getText();
         if (model1.login(input, pass)) {
 
-
+            resp.setText("You have logged in sucessfully");
+            resp.setTextFill(rgb(0, 255, 0));
 
             FXMLLoader fxmlLoader = new FXMLLoader(Oversigt.class.getResource("Oversigt.fxml"));
             Parent root = fxmlLoader.load();
