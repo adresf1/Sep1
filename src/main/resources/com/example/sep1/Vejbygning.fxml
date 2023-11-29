@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="556.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.VejbybygningController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="556.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.VejbygningController">
     <children>
         <ImageView fitHeight="58.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
             <image>

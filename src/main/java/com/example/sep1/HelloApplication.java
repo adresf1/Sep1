@@ -18,7 +18,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Bobs byggefirama!");
         stage.getIcons().add(new Image("Logo..png"));
         stage.setScene(scene);
-
         stage.show();
 
     }
