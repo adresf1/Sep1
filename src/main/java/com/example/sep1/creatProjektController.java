@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -37,17 +38,14 @@ public class creatProjektController {
     }
 
 
-    public void cancelpressed() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Oversigt.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage oversigt = new Stage();
-        oversigt.setTitle("Oversigt");
-        oversigt.setScene(new Scene(root, 1000, 800));
+    public void cancelpressed(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
-        oversigt.show();
     }
 
-    public void opret() {
+    public void opret(ActionEvent event) {
 
         String name = Name.getText();
         int pris = Integer.parseInt(Price.getText());
@@ -57,6 +55,10 @@ public class creatProjektController {
         Projekt projekt= new Projekt(name,pris,projekType,0,0,0,0);
         projektlist.add(projekt);
         oversigtController.refresh();
+
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
 
     }
