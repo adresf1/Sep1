@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="361.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="161.0" text="Select Projecttyype" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets left="200.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="45.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Logo..png" />
+         </image>
+      </ImageView>
+      <VBox fx:id="vbox2" prefHeight="335.0" prefWidth="529.0" spacing="50">
+         <children>
+            <Button fx:id="Boligbyggeri" mnemonicParsing="false" text="Boligbyggeri">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Industrielle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Industrielle">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Kommercielle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Kommercielle">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Vejbygning" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Vejbygning">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</VBox>
