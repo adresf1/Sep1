@@ -38,10 +38,10 @@ public class HelloController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Oversigt.fxml"));
             Parent root = fxmlLoader.load();
             Stage oversigt = new Stage();
-
             oversigt.setTitle("Oversigt");
             oversigt.setScene(new Scene(root, 1000, 800));
-
+            OversigtController controller = fxmlLoader.getController();
+            controller.init(new Projektlist());
             oversigt.show();
         } else {
             resp.setText("Wrong, try again");

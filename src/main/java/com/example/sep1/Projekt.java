@@ -3,7 +3,7 @@ package com.example.sep1;
 public class Projekt {
 
     private int forventetPris, forventetTid, størrelse, budget, mandeTimer, matriealeOmkostninger;
-    private String projektTyupe;
+    private String projektType;
 
     public Projekt(int forventetPris, int forventetTid, int størrelse, int budget, int mandeTimer, int matriealeOmkostninger, String projektTyupe) {
         this.forventetPris = forventetPris;
@@ -12,7 +12,7 @@ public class Projekt {
         this.budget = budget;
         this.mandeTimer = mandeTimer;
         this.matriealeOmkostninger = matriealeOmkostninger;
-        this.projektTyupe = projektTyupe;
+        this.projektType = projektTyupe;
     }
     public void setProjekt(int forventetPris, int forventetTid, int størrelse, int budget, int mandeTimer, int matriealeOmkostninger, String projektTyupe) {
         this.forventetPris = forventetPris;
@@ -21,7 +21,7 @@ public class Projekt {
         this.budget = budget;
         this.mandeTimer = mandeTimer;
         this.matriealeOmkostninger = matriealeOmkostninger;
-        this.projektTyupe = projektTyupe;
+        this.projektType = projektTyupe;
     }
 
     public int getForventetPris() {
@@ -48,8 +48,8 @@ public class Projekt {
         return matriealeOmkostninger;
     }
 
-    public String getProjektTyupe() {
-        return projektTyupe;
+    public String getProjektType() {
+        return projektType;
     }
 
 
