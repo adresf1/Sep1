@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.EventObject;
 
 import static javafx.scene.paint.Color.rgb;
 
@@ -26,6 +27,7 @@ public class HelloController
     @FXML private PasswordField Password;
     @FXML private Button cancel;
     @FXML private Label resp;
+
 
 
     private LoginModel model1 = new LoginModel();
@@ -48,6 +50,7 @@ public class HelloController
             oversigt.setScene(new Scene(root, 1000, 800));
 
             oversigt.show();
+
 
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();

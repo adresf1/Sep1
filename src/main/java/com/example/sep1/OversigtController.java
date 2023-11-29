@@ -14,23 +14,32 @@ public class OversigtController {
 
     @FXML
     TableView <Projekt> projektTableView;
-@FXML TableColumn <Projekt, String> name;
+    @FXML TableColumn <Projekt, String> name;
 
-@FXML TableColumn <Projekt, Integer> price;
+    @FXML TableColumn <Projekt, Integer> price;
     @FXML TableColumn <Projekt, String> projektType;
     @FXML TableColumn <Projekt, String> expectedTime;
     @FXML TableColumn <Projekt, Boolean> delete;
 
     @FXML TableColumn <Projekt, Boolean> complete;
 
-@FXML  Button creatprojekt;
+    @FXML  Button creatprojekt;
 
-private Projektlist projektlist;
+    private Projektlist projektlist;
 
-    public void creatProjekt(){
+    public void creatProjekt() throws IOException {
 
+        FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
 
+        Parent root = fxmlLoader.load();
 
+        Stage oversigt = new Stage();
+        creatProjektController controller = fxmlLoader.getController();
+        controller.init(projektlist, this);
+
+        oversigt.setScene(new Scene(root, 1000, 800));
+        oversigt.setTitle("OprettelseAfProjekt");
+        oversigt.show();
 
     }
     public void OnButtonpreseedChange() throws IOException
@@ -41,17 +50,27 @@ private Projektlist projektlist;
         oversigt.setScene(new Scene(root, 1000, 800));
         oversigt.setTitle("Oversigt");
         oversigt.show();
+
     }
 
     public void init(Projektlist projektlist)
 
     {
         this.projektlist=projektlist;
-        //Create a binding between Student object and it's attributes
-        //Uses reflection, so String parameter must match name of Getter
-        name.setCellValueFactory(new PropertyValueFactory<>("projektType"));
+
+        projektType.setCellValueFactory(new PropertyValueFactory<>("projektType"));
+
+        price.setCellValueFactory(new PropertyValueFactory<>("Budget"));
+        name.setCellValueFactory(new PropertyValueFactory<>("navn"));
+
         projektTableView.getItems().addAll(projektlist.getData());
 
     }
 
+    public void refresh() {
+        projektTableView.getItems().clear();
+        projektTableView.getItems().addAll(projektlist.getData());
+
+
+    }
 }
