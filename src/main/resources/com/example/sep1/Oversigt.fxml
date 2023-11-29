@@ -36,12 +36,7 @@
                   <Insets left="80.0" top="50.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Delete Project">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="25.0" top="50.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="Create Project">
+            <Button mnemonicParsing="false" onAction="#creatProjekt" text="Create Project">
                <HBox.margin>
                   <Insets left="10.0" top="50.0" />
                </HBox.margin>
@@ -53,13 +48,14 @@
             </Button>
          </children>
       </HBox>
-      <TableView prefHeight="628.0" prefWidth="798.0">
+      <TableView fx:id="creatprojekt" prefHeight="628.0" prefWidth="798.0">
         <columns>
           <TableColumn prefWidth="92.00000250339508" text="Completed" />
-          <TableColumn prefWidth="102.66670989990234" text="Name" />
+          <TableColumn fx:id="names" prefWidth="102.66670989990234" text="Name" />
             <TableColumn minWidth="0.0" prefWidth="99.33332824707031" text="Price" />
             <TableColumn prefWidth="126.0" text="Projecttype" />
             <TableColumn prefWidth="120.66665649414062" text="Expected Time" />
+            <TableColumn prefWidth="92.00000250339508" text="Delete" />
         </columns>
          <VBox.margin>
             <Insets top="20.0" />

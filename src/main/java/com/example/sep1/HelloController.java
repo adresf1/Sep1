@@ -25,7 +25,6 @@ public class HelloController
     @FXML private Label resp;
 
 
-
     private LoginModel model1 = new LoginModel();
     private Paint rgb;
 
@@ -33,11 +32,10 @@ public class HelloController
         String input = username.getText();
         String pass = Password.getText();
         if (model1.login(input, pass)) {
-
             resp.setText("You have logged in sucessfully");
             resp.setTextFill(rgb(0, 255, 0));
 
-            FXMLLoader fxmlLoader = new FXMLLoader(Oversigt.class.getResource("Oversigt.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Oversigt.fxml"));
             Parent root = fxmlLoader.load();
             Stage oversigt = new Stage();
 
