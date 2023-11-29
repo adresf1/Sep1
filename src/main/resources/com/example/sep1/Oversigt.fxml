@@ -31,7 +31,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Change Default Settings">
+            <Button mnemonicParsing="false" onAction="#OnButtonpreseedChange" prefHeight="25.0" prefWidth="150.0" text="Change Default Settings">
                <HBox.margin>
                   <Insets left="80.0" top="50.0" />
                </HBox.margin>
@@ -48,14 +48,14 @@
             </Button>
          </children>
       </HBox>
-      <TableView prefHeight="628.0" prefWidth="798.0">
+      <TableView fx:id="projektTableView" onSort="#OnButtonpreseedChange" prefHeight="628.0" prefWidth="798.0">
         <columns>
-          <TableColumn prefWidth="92.00000250339508" text="Completed" />
-          <TableColumn fx:id="names" prefWidth="102.66670989990234" text="Name" />
-            <TableColumn minWidth="0.0" prefWidth="99.33332824707031" text="Price" />
-            <TableColumn prefWidth="126.0" text="Projecttype" />
-            <TableColumn prefWidth="120.66665649414062" text="Expected Time" />
-            <TableColumn prefWidth="92.00000250339508" text="Delete" />
+          <TableColumn fx:id="complete" prefWidth="92.00000250339508" text="Completed" />
+          <TableColumn fx:id="name" prefWidth="102.66670989990234" text="Name" />
+            <TableColumn fx:id="price" minWidth="0.0" prefWidth="99.33332824707031" text="Price" />
+            <TableColumn fx:id="projektType" prefWidth="126.0" text="Projecttype" />
+            <TableColumn fx:id="expectedTime" prefWidth="120.66665649414062" text="Expected Time" />
+            <TableColumn fx:id="delete" prefWidth="92.00000250339508" text="Delete" />
         </columns>
          <VBox.margin>
             <Insets top="20.0" />

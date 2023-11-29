@@ -1,8 +1,10 @@
 package com.example.sep1;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -28,7 +31,8 @@ public class HelloController
     private LoginModel model1 = new LoginModel();
     private Paint rgb;
 
-    public void OnButtonPressed() throws IOException {
+    public void OnButtonPressed(ActionEvent event) throws IOException {
+
         String input = username.getText();
         String pass = Password.getText();
         if (model1.login(input, pass)) {
@@ -37,12 +41,18 @@ public class HelloController
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Oversigt.fxml"));
             Parent root = fxmlLoader.load();
+            OversigtController controller = fxmlLoader.getController();
+            controller.init(new Projektlist());
             Stage oversigt = new Stage();
             oversigt.setTitle("Oversigt");
             oversigt.setScene(new Scene(root, 1000, 800));
-            OversigtController controller = fxmlLoader.getController();
-            controller.init(new Projektlist());
+
             oversigt.show();
+
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+
         } else {
             resp.setText("Wrong, try again");
             resp.setTextFill(rgb(255, 0, 0));
