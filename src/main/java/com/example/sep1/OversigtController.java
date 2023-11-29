@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 public class OversigtController {
 
 @FXML private Button creatprojekt;
-
+@FXML
 
     public void creatProjekt(){
 
