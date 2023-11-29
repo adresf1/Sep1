@@ -10,7 +10,7 @@ public class Projektlist {
 
 public Projektlist(){
     projekts = new ArrayList<>();
-
+    projekts.add(new Projekt(123,123,123,123,123,"hej"));
 }
 public void add(Projekt projekt){
     projekts.add(projekt);

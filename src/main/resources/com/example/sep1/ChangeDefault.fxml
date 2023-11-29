@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="361.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.ChangeDefaultController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="161.0" text="Select Projecttyype" textAlignment="CENTER">
          <VBox.margin>
@@ -23,24 +23,24 @@
             <Image url="@../../../Logo..png" />
          </image>
       </ImageView>
-      <VBox fx:id="vbox2" prefHeight="335.0" prefWidth="529.0" spacing="50">
+      <VBox fx:id="vbox2" prefHeight="301.0" prefWidth="542.0" spacing="50">
          <children>
-            <Button fx:id="Boligbyggeri" mnemonicParsing="false" text="Boligbyggeri">
+            <Button fx:id="Boligbyggeri" mnemonicParsing="false" onAction="#OnButtonPresedBoligByggeri" prefHeight="33.0" prefWidth="91.0" text="Boligbyggeri">
                <VBox.margin>
                   <Insets left="230.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Industrielle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Industrielle">
+            <Button fx:id="Industrielle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnButtonPresedIndustrielle" prefHeight="33.0" prefWidth="91.0" text="Industrielle">
                <VBox.margin>
                   <Insets left="230.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Kommercielle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Kommercielle">
+            <Button fx:id="Kommercielle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnButtonPresedKommercielle" prefHeight="33.0" prefWidth="91.0" text="Kommercielle">
                <VBox.margin>
                   <Insets left="230.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Vejbygning" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Vejbygning">
+            <Button fx:id="Vejbygning" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnButtonPresedVejbybgning" prefHeight="33.0" prefWidth="91.0" text="Vejbygning">
                <VBox.margin>
                   <Insets left="230.0" />
                </VBox.margin>

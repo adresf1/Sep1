@@ -3,17 +3,16 @@ package com.example.sep1;
 public class Projekt {
 
     private int  forventetTid, størrelse, budget, mandeTimer, matriealeOmkostninger;
-    private String navn, projektType;
+    private String projektType;
 
-    public Projekt(String navn, int budget,  String projektType, int forventetTid, int størrelse,  int mandeTimer, int matriealeOmkostninger) {
-this.navn=navn;
+    public Projekt( int forventetTid, int størrelse, int budget, int mandeTimer, int matriealeOmkostninger, String projektTyupe) {
+
         this.forventetTid = forventetTid;
-        this.projektType = projektType;
         this.størrelse = størrelse;
         this.budget = budget;
         this.mandeTimer = mandeTimer;
         this.matriealeOmkostninger = matriealeOmkostninger;
-
+        this.projektType = projektTyupe;
     }
     public void setProjekt( int forventetTid, int størrelse, int budget, int mandeTimer, int matriealeOmkostninger, String projektTyupe) {
 
@@ -52,8 +51,6 @@ this.navn=navn;
     }
 
 
-    public String getNavn() {
-        return navn;
-    }
+
 
 }

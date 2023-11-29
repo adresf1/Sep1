@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="556.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.BoligByggeriController">
+    <children>
+        <ImageView fitHeight="58.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Logo..png" />
+            </image>
+        </ImageView>
+        <VBox prefHeight="363.0" prefWidth="556.0">
+            <children>
+                <Label contentDisplay="RIGHT" text="Budget">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Budget" prefHeight="25.0" prefWidth="238.0" promptText="Specify a Number" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" text="Forventet tid">
+                    <graphic>
+                        <TextField fx:id="forventet_tid" prefHeight="25.0" prefWidth="238.0" promptText="Specify a Number" />
+                    </graphic>
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="35.0" layoutY="86.0" text="Størrelse">
+                    <graphic>
+                        <TextField fx:id="størrelse" prefHeight="25.0" prefWidth="238.0" promptText="Specify a Number" />
+                    </graphic>
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="35.0" layoutY="137.0" text="Type">
+                    <graphic>
+                        <TextField fx:id="type" prefHeight="25.0" prefWidth="238.0" promptText="What type of usage" />
+                    </graphic>
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Button fx:id="cancel_standard" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" text="Cancel">
+                    <VBox.margin>
+                        <Insets left="300.0" top="75.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="submit_standard" mnemonicParsing="false" prefHeight="23.0" prefWidth="80.0" text="Submit">
+                    <VBox.margin>
+                        <Insets left="400.0" top="-25.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</VBox>
