@@ -15,7 +15,7 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.EventObject;
 
 import static javafx.scene.paint.Color.rgb;
@@ -33,7 +33,7 @@ public class HelloController
     private LoginModel model1 = new LoginModel();
     private Paint rgb;
 
-    public void OnButtonPressed(ActionEvent event) throws IOException {
+    public void OnButtonPressed(ActionEvent event) throws IOException, ClassNotFoundException {
 
         String input = username.getText();
         String pass = Password.getText();
@@ -44,7 +44,12 @@ public class HelloController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Oversigt.fxml"));
             Parent root = fxmlLoader.load();
             OversigtController controller = fxmlLoader.getController();
-            controller.init(new Projektlist());
+
+           FileInputStream fileInputStream = new FileInputStream("data.bin");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            Projektlist projektlist = (Projektlist) objectInputStream.readObject();
+            controller.init(projektlist);
+
             Stage oversigt = new Stage();
             oversigt.setTitle("Oversigt");
             oversigt.setScene(new Scene(root, 1000, 800));

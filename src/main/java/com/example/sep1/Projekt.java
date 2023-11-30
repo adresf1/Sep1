@@ -1,6 +1,8 @@
 package com.example.sep1;
 
-public class Projekt {
+import java.io.Serializable;
+
+public class Projekt implements Serializable  {
 
     private int  forventetTid, størrelse, budget, mandeTimer, matriealeOmkostninger;
     private String navn, projektType;

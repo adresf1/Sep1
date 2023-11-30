@@ -13,7 +13,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.OversigtController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="96.0" prefWidth="821.0">
          <children>
             <ImageView fitHeight="50.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
@@ -31,6 +31,11 @@
                   <Font size="18.0" />
                </font>
             </Text>
+            <Button mnemonicParsing="false" onAction="#OnbuttonEditpreesed" text="Edit selected projekt">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="-70.0" top="50.0" />
+               </HBox.margin>
+            </Button>
             <Button mnemonicParsing="false" onAction="#OnButtonpreseedChange" prefHeight="25.0" prefWidth="150.0" text="Change Default Settings">
                <HBox.margin>
                   <Insets left="80.0" top="50.0" />
@@ -46,16 +51,25 @@
                   <Insets left="15.0" top="50.0" />
                </HBox.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#OnbuttonDeletepreesed" text="Delete selected projekt">
+               <HBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#OnbuttonSavepressed" text="Save Changes">
+               <HBox.margin>
+                  <Insets left="10.0" top="50.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
-      <TableView fx:id="projektTableView" prefHeight="628.0" prefWidth="798.0">
+      <TableView fx:id="projektTableView" prefHeight="643.0" prefWidth="808.0">
         <columns>
           <TableColumn fx:id="complete" prefWidth="92.00000250339508" text="Completed" />
-          <TableColumn fx:id="name" prefWidth="102.66670989990234" text="Name" />
+          <TableColumn fx:id="name" prefWidth="102.66670989990234" text="Owners Name" />
             <TableColumn fx:id="price" minWidth="0.0" prefWidth="99.33332824707031" text="Price" />
             <TableColumn fx:id="projektType" prefWidth="126.0" text="Projecttype" />
             <TableColumn fx:id="expectedTime" prefWidth="120.66665649414062" text="Expected Time" />
-            <TableColumn fx:id="delete" prefWidth="92.00000250339508" text="Delete" />
         </columns>
          <VBox.margin>
             <Insets top="20.0" />

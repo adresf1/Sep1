@@ -1,5 +1,6 @@
 package com.example.sep1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 
 public class OversigtController {
 
@@ -71,6 +72,22 @@ public class OversigtController {
         projektTableView.getItems().clear();
         projektTableView.getItems().addAll(projektlist.getData());
 
+
+    }
+
+    public void OnbuttonEditpreesed(){
+
+    }
+
+    public void OnbuttonDeletepreesed(){
+        Projekt selectedprojekt = projektTableView.getSelectionModel().getSelectedItem();
+        projektlist.remove(selectedprojekt);
+        refresh();
+    }
+
+
+    public void OnbuttonSavepressed( ) throws IOException {
+      projektlist.saveData();
 
     }
 }

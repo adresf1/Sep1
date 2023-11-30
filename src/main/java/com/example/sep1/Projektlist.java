@@ -1,16 +1,18 @@
 package com.example.sep1;
 
+import java.io.*;
 import java.util.ArrayList;
 
-public class Projektlist {
+public class Projektlist implements Serializable {
 
 
     private ArrayList<Projekt> projekts;
+    private DataSaver dataSaver;
 
 
 public Projektlist(){
     projekts = new ArrayList<>();
-
+dataSaver = new DataSaver();
 }
 public void add(Projekt projekt){
     projekts.add(projekt);
@@ -25,4 +27,7 @@ public void add(Projekt projekt){
     }
 
 
+    public void saveData() throws IOException {
+dataSaver.saveData(this);
+    }
 }
