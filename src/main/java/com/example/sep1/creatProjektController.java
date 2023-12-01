@@ -25,12 +25,21 @@ public class creatProjektController {
     TextField Price;
     @FXML
     TextField ProjekType;
+    @FXML
+    TextField Size;
+    @FXML
+    TextField Exeptedtime;
 
-    @FXML TextField ExpectidTime;
-    private VejBygning vejBygning;
-    private Kommercielle kommercielle;
-    private Industrielle industrielle;
-    private BoligByggeri boligByggeri;
+    @FXML
+    TextField Hourspent;
+
+
+    @FXML TextField Kitchens;
+    @FXML TextField Bathrooms;
+    @FXML TextField OtherRooms;
+    @FXML TextField Status;
+
+
 
     private Projektlist projektlist;
     private  OversigtController oversigtController ;
@@ -38,7 +47,7 @@ public class creatProjektController {
     public void init(Projektlist projektlist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
         this.projektlist = projektlist;
-        ProjekType.setText(projektlist.getKommercielledefault().getType());
+    //    ProjekType.setText(projektlist.getKommercielledefault().getType());
 
 
     }
@@ -55,12 +64,16 @@ public class creatProjektController {
     }
 
     public void opret(ActionEvent event) {
+        int size = Integer.parseInt(Size.getText());
+        int exepteced = Integer.parseInt(Exeptedtime.getText());
+        int hours = Integer.parseInt(Hourspent.getText());
+
         String name = Name.getText();
         int pris = Integer.parseInt(Price.getText());
-        String projekType = ProjekType.getText();
+        String Statu = Status.getText();
 
 
-        Projekt projekt= new Projekt(name,pris,projekType,0,0,0,0);
+        Projekt projekt= new Projekt(name,pris,Statu,exepteced,size,hours,0);
         projektlist.add(projekt);
         oversigtController.refresh();
 

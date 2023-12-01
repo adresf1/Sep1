@@ -1,5 +1,7 @@
 package com.example.sep1;
 
+import java.util.ArrayList;
+
 public class  BoligByggeri extends Projekt{
     private int antalKekkener, antalBadeværelser, andreVærelser;
 
@@ -22,5 +24,6 @@ public class  BoligByggeri extends Projekt{
         return andreVærelser;
     }
 
+    private ArrayList<BoligByggeri> boligByggeris;
 
 }

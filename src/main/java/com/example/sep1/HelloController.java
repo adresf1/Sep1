@@ -50,7 +50,7 @@ public class HelloController
             Projektlist projektlist = (Projektlist) objectInputStream.readObject();
 
             //Projektlist projektlist = new Projektlist();
-            controller.init(projektlist);
+            controller.init(new Projektlist());
 
 
             Stage oversigt = new Stage();

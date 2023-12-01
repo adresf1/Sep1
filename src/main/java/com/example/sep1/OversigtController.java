@@ -18,8 +18,8 @@ public class OversigtController {
     @FXML TableColumn <Projekt, String> name;
 
     @FXML TableColumn <Projekt, Integer> price;
-    @FXML TableColumn <Projekt, String> projektType;
-    @FXML TableColumn <Projekt, String> expectedTime;
+
+    @FXML TableColumn <Projekt, Integer> Exeptedtime;
     @FXML TableColumn <Projekt, Boolean> delete;
 
     @FXML TableColumn <Projekt, Boolean> complete;
@@ -28,7 +28,7 @@ public class OversigtController {
 
     private Projektlist projektlist;
 
-    public void creatProjekt() throws IOException {
+    public void creatBoligbyggeriProjekt() throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
 
@@ -60,8 +60,7 @@ public class OversigtController {
 
     {
         this.projektlist=projektlist;
-
-        projektType.setCellValueFactory(new PropertyValueFactory<>("projektType"));
+        Exeptedtime.setCellValueFactory(new PropertyValueFactory<>("forventetTid"));
 
         price.setCellValueFactory(new PropertyValueFactory<>("Budget"));
         name.setCellValueFactory(new PropertyValueFactory<>("navn"));
