@@ -9,12 +9,25 @@ import java.io.IOException;
 
 public class ChangeDefaultController
 {
+    public Projektlist getProjektlist()
+    {
+        return projektlist;
+    }
+
+    public void setProjektlist(Projektlist projektlist)
+    {
+        this.projektlist = projektlist;
+    }
+
+    private Projektlist projektlist;
     public void OnButtonPresedKommercielle() throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("Kommercielle.fxml"));
         Parent root = fxmlLoader.load();
+        KommercielleController kommercielleController = fxmlLoader.getController();
+        kommercielleController.setProjektlist(projektlist);
         Stage oversigt = new Stage();
-        oversigt.setScene(new Scene(root, 550, 390));
+        oversigt.setScene(new Scene(root, 560, 430));
         oversigt.setTitle("Kommercielle");
         oversigt.show();
     }
@@ -23,7 +36,7 @@ public class ChangeDefaultController
         FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("Vejbygning.fxml"));
         Parent root = fxmlLoader.load();
         Stage oversigt = new Stage();
-        oversigt.setScene(new Scene(root, 550, 390));
+        oversigt.setScene(new Scene(root, 560, 430));
         oversigt.setTitle("Vejbygning");
         oversigt.show();
     }

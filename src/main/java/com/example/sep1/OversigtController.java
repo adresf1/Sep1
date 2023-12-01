@@ -47,8 +47,10 @@ public class OversigtController {
     {
         FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("ChangeDefault.fxml"));
         Parent root = fxmlLoader.load();
+        ChangeDefaultController changeDefaultController = fxmlLoader.getController();
+        changeDefaultController.setProjektlist(projektlist);
         Stage oversigt = new Stage();
-        oversigt.setScene(new Scene(root, 1000, 800));
+        oversigt.setScene(new Scene(root, 600, 400));
         oversigt.setTitle("Oversigt");
         oversigt.show();
 

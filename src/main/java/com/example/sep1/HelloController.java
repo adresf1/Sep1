@@ -45,10 +45,13 @@ public class HelloController
             Parent root = fxmlLoader.load();
             OversigtController controller = fxmlLoader.getController();
 
-           FileInputStream fileInputStream = new FileInputStream("data.bin");
+            FileInputStream fileInputStream = new FileInputStream("data.bin");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             Projektlist projektlist = (Projektlist) objectInputStream.readObject();
+
+            //Projektlist projektlist = new Projektlist();
             controller.init(projektlist);
+
 
             Stage oversigt = new Stage();
             oversigt.setTitle("Oversigt");

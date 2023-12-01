@@ -7,12 +7,15 @@ public class Projektlist implements Serializable {
 
 
     private ArrayList<Projekt> projekts;
+
+    private Kommercielle kommercielledefault;
+
     private DataSaver dataSaver;
 
 
 public Projektlist(){
     projekts = new ArrayList<>();
-dataSaver = new DataSaver();
+    dataSaver = new DataSaver();
 }
 public void add(Projekt projekt){
     projekts.add(projekt);
@@ -28,6 +31,16 @@ public void add(Projekt projekt){
 
 
     public void saveData() throws IOException {
-dataSaver.saveData(this);
+    dataSaver.saveData(this);
     }
+    public Kommercielle getKommercielledefault()
+    {
+        return kommercielledefault;
+    }
+
+    public void setKommercielledefault(Kommercielle kommercielledefault)
+    {
+        this.kommercielledefault = kommercielledefault;
+    }
+
 }

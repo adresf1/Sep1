@@ -13,7 +13,7 @@ public class LoginModel
      /*
     Create dummy data for logins. Feel free to add your own data
      */ logins = new HashMap();
-    logins.put("Bob", "SuperPass123");
+    logins.put("Bob", "g1");
   }
 
   public boolean login(String username, String password)

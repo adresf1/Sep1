@@ -8,7 +8,7 @@ public class Projekt implements Serializable  {
     private String navn, projektType;
 
     public Projekt(String navn, int budget,  String projektType, int forventetTid, int størrelse,  int mandeTimer, int matriealeOmkostninger) {
-this.navn=navn;
+        this.navn=navn;
         this.forventetTid = forventetTid;
         this.projektType = projektType;
         this.størrelse = størrelse;
@@ -21,13 +21,30 @@ this.navn=navn;
 
         this.forventetTid = forventetTid;
         this.størrelse = størrelse;
-        this.budget = budget;
+        setBudget(this.budget);
         this.mandeTimer = mandeTimer;
         this.matriealeOmkostninger = matriealeOmkostninger;
         this.projektType = projektTyupe;
     }
+    public void setBudget(int Nybudget)
+    {
+        this.budget = Nybudget;
+    }
 
+    public void setForventetTid(int forventetTid)
+    {
+        this.forventetTid = forventetTid;
+    }
 
+    public void setStørrelse(int størrelse)
+    {
+        this.størrelse = størrelse;
+    }
+
+    public void setProjektType(String projektType)
+    {
+        this.projektType = projektType;
+    }
 
     public int getForventetTid() {
         return forventetTid;

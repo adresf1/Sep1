@@ -13,6 +13,7 @@ import javafx.scene.control.TitledPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.PrimitiveIterator;
 
 public class creatProjektController {
@@ -24,6 +25,8 @@ public class creatProjektController {
     TextField Price;
     @FXML
     TextField ProjekType;
+
+    @FXML TextField ExpectidTime;
     private VejBygning vejBygning;
     private Kommercielle kommercielle;
     private Industrielle industrielle;
@@ -35,6 +38,9 @@ public class creatProjektController {
     public void init(Projektlist projektlist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
         this.projektlist = projektlist;
+        ProjekType.setText(projektlist.getKommercielledefault().getType());
+
+
     }
 
 
@@ -44,9 +50,11 @@ public class creatProjektController {
         stage.close();
 
     }
+    private void setDefault()
+    {
+    }
 
     public void opret(ActionEvent event) {
-
         String name = Name.getText();
         int pris = Integer.parseInt(Price.getText());
         String projekType = ProjekType.getText();
