@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/*
 public class KommercielleController {
     @FXML private TextField BudgetTextField;
     @FXML private TextField forventet_tid;
@@ -17,7 +17,7 @@ public class KommercielleController {
     @FXML private  TextField Etaage;
 
     private Kommercielle kommercielle;
-    private Projektlist projektlist;
+    //private Projektlist projektlist;
 
     public void initialize() {
 
@@ -56,7 +56,7 @@ public class KommercielleController {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        projektlist.setKommercielledefault(kommercielle);
+       // projektlist.setKommercielledefault(kommercielle);
         //return kommercielle; //TODO: GEM TIL FIL ISTEDET
     }
     public void cancelpressed(ActionEvent event) throws IOException
@@ -67,9 +67,13 @@ public class KommercielleController {
 
     }
 
-    public void setProjektlist(Projektlist projektlist)
+   /* public void setProjektlist(Projektlist projektlist)
     {
 
         this.projektlist = projektlist;
     }
+
+
 }
+
+ */

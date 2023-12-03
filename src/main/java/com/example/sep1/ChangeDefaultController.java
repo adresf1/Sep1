@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ChangeDefaultController
 {
-    public Projektlist getProjektlist()
+    /*public Projektlist getProjektlist()
     {
         return projektlist;
     }
@@ -58,6 +58,8 @@ public class ChangeDefaultController
         oversigt.setTitle("Industrielle");
         oversigt.show();
     }
+
+     */
 
 
 }

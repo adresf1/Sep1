@@ -8,8 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class creatProjektController {
-
+public class CreatIndustrilleController {
 
     @FXML
     TextField Name;
@@ -24,19 +23,18 @@ public class creatProjektController {
     TextField Hourspent;
 
 
-    @FXML TextField Kitchens;
-    @FXML TextField Bathrooms;
-    @FXML TextField OtherRooms;
-    @FXML TextField Status;
+    @FXML
+    TextField type;
 
 
 
-    private Boligbyggerilist boligbyggerilist;
+
+    private Industrillelist industrillelist;
     private  OversigtController oversigtController ;
 
-    public void init(Boligbyggerilist boligbyggerilist, OversigtController oversigtController) {
+    public void init(Industrillelist industrillelist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
-       this.boligbyggerilist=boligbyggerilist;
+        this.industrillelist=industrillelist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
 
 
@@ -57,16 +55,15 @@ public class creatProjektController {
         int size = Integer.parseInt(Size.getText());
         int exepteced = Integer.parseInt(Exeptedtime.getText());
         int hours = Integer.parseInt(Hourspent.getText());
-        int antalKøkkener = Integer.parseInt(Kitchens.getText());
-        int antalBadeværelser = Integer.parseInt(Bathrooms.getText());
+
         String name = Name.getText();
         int pris = Integer.parseInt(Price.getText());
-        int andreVærelser = Integer.parseInt(OtherRooms.getText());
-        String Statu = Status.getText();
+        String industriltype = type.getText();
 
 
-        BoligByggeri boligByggeri= new BoligByggeri(name,pris, exepteced,size,hours,antalKøkkener,antalBadeværelser,andreVærelser);
-        boligbyggerilist.add(boligByggeri);
+
+        Industrielle industrielle = new Industrielle(name, exepteced,pris,size, hours,industriltype);
+        industrillelist.add(industrielle);
         oversigtController.refresh();
 
         Node node = (Node) event.getSource();
@@ -75,17 +72,4 @@ public class creatProjektController {
 
 
     }
-
-
-
-
 }
-
-
-
-
-
-
-
-
-

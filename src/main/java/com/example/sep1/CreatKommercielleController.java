@@ -8,8 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class creatProjektController {
-
+public class CreatKommercielleController {
 
     @FXML
     TextField Name;
@@ -23,20 +22,20 @@ public class creatProjektController {
     @FXML
     TextField Hourspent;
 
+    @FXML TextField antalEtager;
 
-    @FXML TextField Kitchens;
-    @FXML TextField Bathrooms;
-    @FXML TextField OtherRooms;
-    @FXML TextField Status;
-
+    @FXML
+    TextField type;
 
 
-    private Boligbyggerilist boligbyggerilist;
+
+
+    private Kommerciellelist kommerciellelist;
     private  OversigtController oversigtController ;
 
-    public void init(Boligbyggerilist boligbyggerilist, OversigtController oversigtController) {
+    public void init(Kommerciellelist kommerciellelist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
-       this.boligbyggerilist=boligbyggerilist;
+        this.kommerciellelist=kommerciellelist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
 
 
@@ -57,16 +56,16 @@ public class creatProjektController {
         int size = Integer.parseInt(Size.getText());
         int exepteced = Integer.parseInt(Exeptedtime.getText());
         int hours = Integer.parseInt(Hourspent.getText());
-        int antalKøkkener = Integer.parseInt(Kitchens.getText());
-        int antalBadeværelser = Integer.parseInt(Bathrooms.getText());
+
         String name = Name.getText();
         int pris = Integer.parseInt(Price.getText());
-        int andreVærelser = Integer.parseInt(OtherRooms.getText());
-        String Statu = Status.getText();
+        int antaletager = Integer.parseInt(antalEtager.getText());
+        String typen = type.getText();
 
 
-        BoligByggeri boligByggeri= new BoligByggeri(name,pris, exepteced,size,hours,antalKøkkener,antalBadeværelser,andreVærelser);
-        boligbyggerilist.add(boligByggeri);
+
+        Kommercielle kommercielle = new Kommercielle(name, exepteced,pris,size, hours,antaletager,typen);
+        kommerciellelist.add(kommercielle);
         oversigtController.refresh();
 
         Node node = (Node) event.getSource();
@@ -75,17 +74,4 @@ public class creatProjektController {
 
 
     }
-
-
-
-
 }
-
-
-
-
-
-
-
-
-

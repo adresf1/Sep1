@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.sep1.OpretVejbygning"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.CreatVejbygningcontroller">
+    <children>
+        <Label text="Create Project">
+            <VBox.margin>
+                <Insets left="350.0" top="25.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <VBox prefHeight="618.0" prefWidth="775.0">
+            <children>
+                <Label contentDisplay="RIGHT" text="Name">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Name" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="35.0" layoutY="35.0" text="Price">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Price" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="53.0" text="Expected Time">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Exeptedtime" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="70.0" text="Size">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Size" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="87.0" text="Hours Spent">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Hourspent" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="105.0" text="Bredde">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Bredde" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="122.0" text="Længde">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Længde" />
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="10.0" layoutY="139.0" text="Bro">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Bro" />
+                    </graphic>
+                </Label>
+                <Label fx:id="" contentDisplay="RIGHT" layoutX="10.0" layoutY="157.0" text="Tunnel">
+                    <VBox.margin>
+                        <Insets left="25.0" top="25.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <TextField fx:id="Tunnel" />
+                    </graphic>
+                </Label>
+                <VBox prefHeight="167.0" prefWidth="775.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#cancelpressed" text="Cancel">
+                            <VBox.margin>
+                                <Insets left="600.0" top="25.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#opret" text="Creat">
+                            <VBox.margin>
+                                <Insets left="700.0" top="-25.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

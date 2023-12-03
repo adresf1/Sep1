@@ -47,11 +47,13 @@ public class HelloController
 
             FileInputStream fileInputStream = new FileInputStream("data.bin");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            Projektlist projektlist = (Projektlist) objectInputStream.readObject();
+           // Boligbyggerilist boligbyggerilist = (Boligbyggerilist) objectInputStream.readObject();
 
             //Projektlist projektlist = new Projektlist();
-            controller.init(new Projektlist());
-
+            controller.init(new Boligbyggerilist());
+            controller.init(new Vejbygninglist());
+            controller.init(new Kommerciellelist());
+            controller.init(new Industrillelist());
 
             Stage oversigt = new Stage();
             oversigt.setTitle("Oversigt");
