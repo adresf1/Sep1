@@ -1,6 +1,7 @@
 package com.example.sep1;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Projekt implements Serializable  {
 
@@ -73,4 +74,17 @@ public class Projekt implements Serializable  {
         return navn;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Projekt projekt = (Projekt) o;
+        return forventetTid == projekt.forventetTid && størrelse == projekt.størrelse && budget == projekt.budget && mandeTimer == projekt.mandeTimer && matriealeOmkostninger == projekt.matriealeOmkostninger && Objects.equals(navn, projekt.navn) && Objects.equals(projektType, projekt.projektType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(forventetTid, størrelse, budget, mandeTimer, matriealeOmkostninger, navn, projektType);
+    }
 }
