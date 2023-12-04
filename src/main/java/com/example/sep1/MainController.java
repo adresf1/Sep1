@@ -1,4 +1,4 @@
-package com.example.sep1;
+/*package com.example.sep1;
 
 
 import javafx.event.ActionEvent;
@@ -45,13 +45,13 @@ public class MainController
 
             FileInputStream fileInputStream = new FileInputStream("data.bin");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            /*
+
            Boligbyggerilist boligbyggerilist = (Boligbyggerilist) objectInputStream.readObject();
             Vejbygninglist vejbygninglist = (Vejbygninglist) objectInputStream.readObject();
             Kommerciellelist kommerciellelist=(Kommerciellelist) objectInputStream.readObject();
                     Industrillelist industrillelist=(Industrillelist) objectInputStream.readObject();
-                    
-             */
+
+
 
             //Projektlist projektlist = new Projektlist();
             controller.init(new Boligbyggerilist());
@@ -85,3 +85,5 @@ public class MainController
 
     }
 }
+
+ */
