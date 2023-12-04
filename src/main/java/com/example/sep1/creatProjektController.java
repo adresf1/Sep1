@@ -39,6 +39,21 @@ public class creatProjektController {
        this.boligbyggerilist=boligbyggerilist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
 
+        if(boligbyggerilist.getSelectedBolig() != null)
+        {
+            BoligByggeri selectedbolig = boligbyggerilist.getSelectedBolig();
+            Name.setText(selectedbolig.getNavn());
+            Price.setText("" + selectedbolig.getBudget());
+            Exeptedtime.setText("" + selectedbolig.getForventetTid());
+            Size.setText("" + selectedbolig.getStørrelse());
+            Hourspent.setText("" + selectedbolig.getMandeTimer());
+            Kitchens.setText("" + selectedbolig.getAntalKekkener());
+            Bathrooms.setText("" + selectedbolig.getAntalBadeværelser());
+            OtherRooms.setText("" + selectedbolig.getAndreVærelser());
+            Status.setText(selectedbolig.getStatus());
+        }
+
+
 
     }
 
@@ -54,25 +69,52 @@ public class creatProjektController {
     }
 
     public void opret(ActionEvent event) {
-        int size = Integer.parseInt(Size.getText());
-        int exepteced = Integer.parseInt(Exeptedtime.getText());
-        int hours = Integer.parseInt(Hourspent.getText());
-        int antalKøkkener = Integer.parseInt(Kitchens.getText());
-        int antalBadeværelser = Integer.parseInt(Bathrooms.getText());
-        String name = Name.getText();
-        int pris = Integer.parseInt(Price.getText());
-        int andreVærelser = Integer.parseInt(OtherRooms.getText());
-        String Statu = Status.getText();
+        if(boligbyggerilist.getSelectedBolig() != null)
+        {
+            int size = Integer.parseInt(Size.getText());
+            int exepteced = Integer.parseInt(Exeptedtime.getText());
+            int hours = Integer.parseInt(Hourspent.getText());
+            int antalKøkkener = Integer.parseInt(Kitchens.getText());
+            int antalBadeværelser = Integer.parseInt(Bathrooms.getText());
+            String name = Name.getText();
+            int pris = Integer.parseInt(Price.getText());
+            int andreVærelser = Integer.parseInt(OtherRooms.getText());
+            String Statu = Status.getText();
 
+            BoligByggeri boligByggeri = new BoligByggeri(name, pris, exepteced,
+                    size, hours, antalKøkkener, antalBadeværelser, andreVærelser,
+                    Statu);
+            boligbyggerilist.UpdateBolig(boligByggeri,boligbyggerilist.getSelectedBolig());
+            oversigtController.refresh();
 
-        BoligByggeri boligByggeri= new BoligByggeri(name,pris, exepteced,size,hours,antalKøkkener,antalBadeværelser,andreVærelser,Statu);
-        boligbyggerilist.add(boligByggeri);
-        oversigtController.refresh();
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
 
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
+        }
+        else
+        {
+            int size = Integer.parseInt(Size.getText());
+            int exepteced = Integer.parseInt(Exeptedtime.getText());
+            int hours = Integer.parseInt(Hourspent.getText());
+            int antalKøkkener = Integer.parseInt(Kitchens.getText());
+            int antalBadeværelser = Integer.parseInt(Bathrooms.getText());
+            String name = Name.getText();
+            int pris = Integer.parseInt(Price.getText());
+            int andreVærelser = Integer.parseInt(OtherRooms.getText());
+            String Statu = Status.getText();
 
+            BoligByggeri boligByggeri = new BoligByggeri(name, pris, exepteced,
+                    size, hours, antalKøkkener, antalBadeværelser, andreVærelser,
+                    Statu);
+            boligbyggerilist.add(boligByggeri);
+            oversigtController.refresh();
+
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+
+        }
 
     }
 

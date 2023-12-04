@@ -33,4 +33,19 @@ public class Industrielle extends Projekt{
     public int hashCode() {
         return Objects.hash(type);
     }
+
+    public void update(Projekt other)
+    {
+        if(other instanceof  Industrielle)
+        {
+            Industrielle industrielle = (Industrielle) other;
+            this.setNavn(industrielle.getNavn());
+            this.setBudget(industrielle.getBudget());
+            this.setMandeTimer(industrielle.getMandeTimer());
+            this.setStørrelse(industrielle.getStørrelse());
+            this.setForventetTid(industrielle.getForventetTid());
+            this.type=industrielle.getType();
+        }
+
+    }
 }

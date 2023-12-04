@@ -9,6 +9,8 @@ public class Boligbyggerilist implements Serializable {
 
     private ArrayList<BoligByggeri> boligByggeriss;
 
+    private BoligByggeri selectedBolig;
+
 
     private DataSaver dataSaver;
 
@@ -33,5 +35,27 @@ public class Boligbyggerilist implements Serializable {
 
     public void saveData() throws IOException {
         dataSaver.saveData(this);
+    }
+
+    public BoligByggeri getSelectedBolig()
+    {
+        return selectedBolig;
+    }
+
+    public void setSelectedBolig(BoligByggeri selectedBolig)
+    {
+        this.selectedBolig = selectedBolig;
+    }
+    public void UpdateBolig(BoligByggeri nybolig, BoligByggeri selectedBolig)
+    {
+        for (BoligByggeri element: boligByggeriss)
+        {
+            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+            if(element==selectedBolig)
+            {
+                element.update(nybolig);
+                break;
+            }
+        }
     }
 }

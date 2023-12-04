@@ -45,6 +45,29 @@ public class  BoligByggeri extends Projekt {
         return Objects.hash(antalKekkener, antalBadeværelser, andreVærelser);
     }
 
+    public void update(Projekt other)
+    {
+        if(other instanceof BoligByggeri)
+        {
+            BoligByggeri boligByggeri = (BoligByggeri) other;
+
+            this.setNavn(boligByggeri.getNavn());
+            this.setBudget(boligByggeri.getBudget());
+            this.setMandeTimer(boligByggeri.getMandeTimer());
+            this.setForventetTid(boligByggeri.getForventetTid());
+            this.setStørrelse(boligByggeri.getStørrelse());
+            this.antalKekkener = boligByggeri.getAntalKekkener();
+            this.antalBadeværelser = boligByggeri.getAntalBadeværelser();
+            this.andreVærelser = boligByggeri.getAndreVærelser();
+            this.status = boligByggeri.getStatus();
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid type for update");
+        }
+
+    }
+
 }
 
 

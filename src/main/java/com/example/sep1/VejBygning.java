@@ -44,4 +44,18 @@ public class VejBygning extends Projekt{
     }
 
 
+    public void update(Projekt other)
+    {
+        if(other instanceof VejBygning)
+        {
+            VejBygning vejBygning = (VejBygning) other;
+            this.setNavn(vejBygning.getNavn());
+            this.setBudget(vejBygning.getBudget());
+
+        }
+
+
+    }
+
+
 }

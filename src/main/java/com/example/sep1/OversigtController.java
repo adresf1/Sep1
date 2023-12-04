@@ -134,7 +134,21 @@ private Industrillelist industrillelist;
 
     }
 
-    public void OnbuttonEditpreesed(){
+    public void OnbuttonEditpreesed()throws IOException{
+        BoligByggeri selectedprojectBolig = BoligTableView.getSelectionModel().getSelectedItem();
+        boligbyggerilist.setSelectedBolig(selectedprojectBolig);
+        FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
+        Parent root = fxmlLoader.load();
+
+        Stage oversigt = new Stage();
+        creatProjektController controller = fxmlLoader.getController();
+        controller.init(boligbyggerilist, this);
+
+        oversigt.setScene(new Scene(root, 1000, 800));
+        oversigt.setTitle("Update");
+        oversigt.show();
+
+
 
     }
 

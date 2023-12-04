@@ -65,4 +65,20 @@ public void setAntalEtager(int antalEtager)
     public int hashCode() {
         return Objects.hash(antalEtager, type);
     }
+
+    public void update(Projekt other)
+    {
+        if(other instanceof Kommercielle)
+        {
+            Kommercielle kommercielle = (Kommercielle) other;
+            this.setNavn(kommercielle.getNavn());
+            this.setBudget(kommercielle.getBudget());
+            this.setMandeTimer(kommercielle.getMandeTimer());
+            this.setForventetTid(kommercielle.getForventetTid());
+            this.setStørrelse(kommercielle.getStørrelse());
+            this.antalEtager = kommercielle.getAntalEtager();
+            this.type = kommercielle.getType();
+        }
+
+    }
 }
