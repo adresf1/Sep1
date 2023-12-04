@@ -65,7 +65,7 @@ public class creatProjektController {
         String Statu = Status.getText();
 
 
-        BoligByggeri boligByggeri= new BoligByggeri(name,pris, exepteced,size,hours,antalKøkkener,antalBadeværelser,andreVærelser);
+        BoligByggeri boligByggeri= new BoligByggeri(name,pris, exepteced,size,hours,antalKøkkener,antalBadeværelser,andreVærelser,Statu);
         boligbyggerilist.add(boligByggeri);
         oversigtController.refresh();
 

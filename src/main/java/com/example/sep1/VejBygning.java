@@ -1,5 +1,7 @@
 package com.example.sep1;
 
+import java.util.Objects;
+
 public class VejBygning extends Projekt{
     private int længde, bredde, bro, tunnel;
 
@@ -27,4 +29,19 @@ public class VejBygning extends Projekt{
     public int getTunnel() {
         return tunnel;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VejBygning that = (VejBygning) o;
+        return længde == that.længde && bredde == that.bredde && bro == that.bro && tunnel == that.tunnel;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(længde, bredde, bro, tunnel);
+    }
+
+
 }

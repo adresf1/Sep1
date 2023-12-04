@@ -13,14 +13,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.*;
-import java.util.EventObject;
 
 import static javafx.scene.paint.Color.rgb;
 
-public class HelloController
+public class MainController
 {
     @FXML private Button button;
     @FXML private TextField username;
@@ -41,13 +39,19 @@ public class HelloController
             resp.setText("You have logged in sucessfully");
             resp.setTextFill(rgb(0, 255, 0));
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Oversigt.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("Oversigt.fxml"));
             Parent root = fxmlLoader.load();
             OversigtController controller = fxmlLoader.getController();
 
             FileInputStream fileInputStream = new FileInputStream("data.bin");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-           // Boligbyggerilist boligbyggerilist = (Boligbyggerilist) objectInputStream.readObject();
+            /*
+           Boligbyggerilist boligbyggerilist = (Boligbyggerilist) objectInputStream.readObject();
+            Vejbygninglist vejbygninglist = (Vejbygninglist) objectInputStream.readObject();
+            Kommerciellelist kommerciellelist=(Kommerciellelist) objectInputStream.readObject();
+                    Industrillelist industrillelist=(Industrillelist) objectInputStream.readObject();
+                    
+             */
 
             //Projektlist projektlist = new Projektlist();
             controller.init(new Boligbyggerilist());

@@ -86,7 +86,7 @@
                               <TableColumn fx:id="Kitchens" prefWidth="72.66668701171875" text="Kitchens" />
                               <TableColumn fx:id="Bathrooms" prefWidth="90.66668701171875" text="Bathrooms" />
                               <TableColumn fx:id="OtherRooms" prefWidth="110.0" text="Other Rooms" />
-                              <TableColumn fx:id="Status" minWidth="0.0" prefWidth="104.6666259765625" text="Status" />
+                              <TableColumn fx:id="boligstatus" minWidth="0.0" prefWidth="104.6666259765625" text="Status" />
                           </columns>
                         </TableView>
                      </children>

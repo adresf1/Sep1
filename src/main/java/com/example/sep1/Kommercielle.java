@@ -1,6 +1,7 @@
 package com.example.sep1;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Kommercielle extends Projekt implements Serializable
 {
@@ -19,6 +20,8 @@ public class Kommercielle extends Projekt implements Serializable
         this.antalEtager = antalEtager;
         this.type = type;
     }
+
+
 public void setBudgetForKommercielle(int budget)
 {
     setBudget(budget);
@@ -50,4 +53,16 @@ public void setAntalEtager(int antalEtager)
         return antalEtager;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Kommercielle that = (Kommercielle) o;
+        return antalEtager == that.antalEtager && Objects.equals(type, that.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(antalEtager, type);
+    }
 }

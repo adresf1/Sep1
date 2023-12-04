@@ -65,11 +65,11 @@ public class CreatVejbygningcontroller {
         int lændge = Integer.parseInt(Længde.getText());
         int bredde = Integer.parseInt(Bredde.getText());
         int bro = Integer.parseInt(Bro.getText());
-        // int tunnel = Integer.parseInt(Tunnel.getText());
+         int tunnel = Integer.parseInt(Tunnel.getText());
 
 
 
-        VejBygning vejBygning = new VejBygning(name, exepteced,pris,size, hours,lændge,bredde,bro,1);
+        VejBygning vejBygning = new VejBygning(name, exepteced,pris,size, hours,lændge,bredde,bro,tunnel);
         vejbygninglist.add(vejBygning);
         oversigtController.refresh();
 

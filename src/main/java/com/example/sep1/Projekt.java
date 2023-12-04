@@ -16,14 +16,13 @@ public class Projekt implements Serializable  {
         this.mandeTimer = mandeTimer;
 
     }
-    public void setProjekt( int forventetTid, int størrelse, int budget, int mandeTimer, int matriealeOmkostninger, String projektTyupe) {
+    public void setProjekt( int forventetTid, int størrelse, int budget, int mandeTimer) {
 
         this.forventetTid = forventetTid;
         this.størrelse = størrelse;
         setBudget(this.budget);
         this.mandeTimer = mandeTimer;
-        this.matriealeOmkostninger = matriealeOmkostninger;
-        this.projektType = projektTyupe;
+
     }
     public void setBudget(int Nybudget)
     {

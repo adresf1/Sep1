@@ -24,6 +24,7 @@ public class OversigtController {
     @FXML TableColumn <BoligByggeri, Integer> Kitchens;
     @FXML TableColumn <BoligByggeri, Integer> Bathrooms;
     @FXML TableColumn <BoligByggeri, Integer> OtherRooms;
+    @FXML TableColumn <BoligByggeri, String> boligstatus;
 
 
 
@@ -108,7 +109,7 @@ private Industrillelist industrillelist;
         Exeptedtime.setCellValueFactory(new PropertyValueFactory<>("forventetTid"));
         price.setCellValueFactory(new PropertyValueFactory<>("Budget"));
         name.setCellValueFactory(new PropertyValueFactory<>("navn"));
-        Tunnel.setCellValueFactory(new PropertyValueFactory<>("tunnel"));
+        boligstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         BoligTableView.getItems().addAll(boligbyggerilist.getData());
 
@@ -117,9 +118,18 @@ private Industrillelist industrillelist;
     public void refresh() {
         BoligTableView.getItems().clear();
         BoligTableView.getItems().addAll(boligbyggerilist.getData());
+
+        VejbygningTableView.getItems().clear();
         VejbygningTableView.getItems().addAll(vejbygninglist.getData());
+
+        kommercielleTableView.getItems().clear();
         kommercielleTableView.getItems().addAll(kommerciellelist.getData());
+
+
+        IndustrilleTableView.getItems().clear();
         IndustrilleTableView.getItems().addAll(industrillelist.getData());
+
+
 
 
     }
@@ -130,24 +140,25 @@ private Industrillelist industrillelist;
 
     public void OnbuttonDeletepreesed(){
             BoligByggeri selectedBolig = (BoligByggeri) BoligTableView.getSelectionModel().getSelectedItem();
-        VejBygning selectedVej = VejbygningTableView.getSelectionModel().getSelectedItem();
-        Industrielle selectedIndustri = IndustrilleTableView.getSelectionModel().getSelectedItem();
-        Kommercielle selectedKommerciell = kommercielleTableView.getSelectionModel().getSelectedItem();
-            if (selectedBolig != null) {
+        VejBygning selectedVej = (VejBygning)  VejbygningTableView.getSelectionModel().getSelectedItem();
+        Industrielle selectedIndustri = (Industrielle) IndustrilleTableView.getSelectionModel().getSelectedItem();
+        Kommercielle selectedKommerciell = (Kommercielle) kommercielleTableView.getSelectionModel().getSelectedItem();
+
+
+
                 boligbyggerilist.remove(selectedBolig);
-            }
 
-            if (selectedVej != null) {
+
+
                 vejbygninglist.remove(selectedVej);
-            }
 
-            if (selectedIndustri != null) {
+
+
                 industrillelist.remove(selectedIndustri);
-            }
 
-            if (selectedKommerciell != null) {
+
+
                 kommerciellelist.remove(selectedKommerciell);
-            }
 
             refresh();
 
@@ -158,6 +169,9 @@ private Industrillelist industrillelist;
 
     public void OnbuttonSavepressed( ) throws IOException {
       boligbyggerilist.saveData();
+        kommerciellelist.saveKommercielledata();
+        vejbygninglist.saveVejbygningData();
+        industrillelist.saveindustrilleData();
 
     }
 
