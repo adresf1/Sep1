@@ -100,6 +100,7 @@ public class CreatIndustrilleController {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            industrillelist.setSelectedIndustrielle(null);
         }
 
     }

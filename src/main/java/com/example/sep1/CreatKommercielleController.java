@@ -104,6 +104,7 @@ public class CreatKommercielleController {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            kommerciellelist.setSelectedKommercielle(null);
 
         }
     }

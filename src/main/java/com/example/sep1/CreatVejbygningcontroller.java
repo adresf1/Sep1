@@ -115,6 +115,7 @@ public class CreatVejbygningcontroller {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.close();
+            vejbygninglist.setSelectedVejbygning(null);
         }
     }
 }
