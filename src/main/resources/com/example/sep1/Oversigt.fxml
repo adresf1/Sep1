@@ -67,6 +67,11 @@
                   <Insets left="10.0" top="50.0" />
                </HBox.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#OnButtonEksportPressed" text="Eksport Data">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
       <TabPane prefHeight="669.0" prefWidth="1025.0" tabClosingPolicy="UNAVAILABLE">

@@ -1,0 +1,17 @@
+{
+  "boligByggeriss": [
+    {
+      "antalKekkener": 4,
+      "antalBadeværelser": 4,
+      "andreVærelser": 5,
+      "status": "b",
+      "forventetTid": 4,
+      "størrelse": 4,
+      "budget": 33,
+      "mandeTimer": 4,
+      "matriealeOmkostninger": 0,
+      "navn": "jh"
+    }
+  ],
+  "dataSaver": {}
+}

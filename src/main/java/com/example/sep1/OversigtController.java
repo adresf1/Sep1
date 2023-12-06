@@ -8,62 +8,92 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import parser.ParserException;
+import parser.XmlJsonParser;
 
 import java.io.*;
 
 public class OversigtController {
 
     @FXML
-    TableView <BoligByggeri> BoligTableView;
+    TableView<BoligByggeri> BoligTableView;
 
-    @FXML TableColumn <BoligByggeri, String> name;
-    @FXML TableColumn <BoligByggeri, Integer> price;
-    @FXML TableColumn <BoligByggeri, Integer> Exeptedtime;
-    @FXML TableColumn <BoligByggeri, Integer> Size;
-    @FXML TableColumn <BoligByggeri, Integer> Hourspent;
-    @FXML TableColumn <BoligByggeri, Integer> Kitchens;
-    @FXML TableColumn <BoligByggeri, Integer> Bathrooms;
-    @FXML TableColumn <BoligByggeri, Integer> OtherRooms;
-    @FXML TableColumn <BoligByggeri, String> boligstatus;
-
+    @FXML
+    TableColumn<BoligByggeri, String> name;
+    @FXML
+    TableColumn<BoligByggeri, Integer> price;
+    @FXML
+    TableColumn<BoligByggeri, Integer> Exeptedtime;
+    @FXML
+    TableColumn<BoligByggeri, Integer> Size;
+    @FXML
+    TableColumn<BoligByggeri, Integer> Hourspent;
+    @FXML
+    TableColumn<BoligByggeri, Integer> Kitchens;
+    @FXML
+    TableColumn<BoligByggeri, Integer> Bathrooms;
+    @FXML
+    TableColumn<BoligByggeri, Integer> OtherRooms;
+    @FXML
+    TableColumn<BoligByggeri, String> boligstatus;
 
 
     @FXML
-    TableView <VejBygning> VejbygningTableView;
-    @FXML TableColumn <VejBygning, String> Vejbygningname;
-    @FXML TableColumn <VejBygning, Integer> Vejbygningsprice;
-    @FXML TableColumn <VejBygning, Integer> VejbygningExeptedtime;
-    @FXML TableColumn <VejBygning, Integer> VejbygningSize;
-    @FXML TableColumn <VejBygning, Integer> VejbygningHourspent;
-    @FXML TableColumn <VejBygning, Integer> Længde;
-    @FXML TableColumn <VejBygning, Integer> Bredde;
-    @FXML TableColumn <VejBygning, Integer> Bro;
-    @FXML TableColumn <VejBygning, Integer> Tunnel;
+    TableView<VejBygning> VejbygningTableView;
+    @FXML
+    TableColumn<VejBygning, String> Vejbygningname;
+    @FXML
+    TableColumn<VejBygning, Integer> Vejbygningsprice;
+    @FXML
+    TableColumn<VejBygning, Integer> VejbygningExeptedtime;
+    @FXML
+    TableColumn<VejBygning, Integer> VejbygningSize;
+    @FXML
+    TableColumn<VejBygning, Integer> VejbygningHourspent;
+    @FXML
+    TableColumn<VejBygning, Integer> Længde;
+    @FXML
+    TableColumn<VejBygning, Integer> Bredde;
+    @FXML
+    TableColumn<VejBygning, Integer> Bro;
+    @FXML
+    TableColumn<VejBygning, Integer> Tunnel;
 
     @FXML
-    TableView <Kommercielle> kommercielleTableView;
-    @FXML TableColumn <VejBygning, String> Kommerciellename;
-    @FXML TableColumn <VejBygning, Integer>Kommercielleprice;
-    @FXML TableColumn <VejBygning, Integer> KommerciellegExeptedtime;
-    @FXML TableColumn <VejBygning, Integer>KommercielleSize;
-    @FXML TableColumn <VejBygning, Integer> KommercielleHourspent;
-    @FXML TableColumn <VejBygning, Integer> antalEtager;
-    @FXML TableColumn <VejBygning, String> kommercielletype;
+    TableView<Kommercielle> kommercielleTableView;
+    @FXML
+    TableColumn<VejBygning, String> Kommerciellename;
+    @FXML
+    TableColumn<VejBygning, Integer> Kommercielleprice;
+    @FXML
+    TableColumn<VejBygning, Integer> KommerciellegExeptedtime;
+    @FXML
+    TableColumn<VejBygning, Integer> KommercielleSize;
+    @FXML
+    TableColumn<VejBygning, Integer> KommercielleHourspent;
+    @FXML
+    TableColumn<VejBygning, Integer> antalEtager;
+    @FXML
+    TableColumn<VejBygning, String> kommercielletype;
 
     @FXML
-    TableView <Industrielle> IndustrilleTableView;
-    @FXML TableColumn <Industrielle, String> Industrielleename;
-    @FXML TableColumn <Industrielle, Integer>Industrielleprice;
-    @FXML TableColumn <Industrielle, Integer> IndustrielleExeptedtime;
-    @FXML TableColumn <Industrielle, Integer>IndustrielleSize;
-    @FXML TableColumn <Industrielle, Integer> IndustrielleHourspent;
+    TableView<Industrielle> IndustrilleTableView;
+    @FXML
+    TableColumn<Industrielle, String> Industrielleename;
+    @FXML
+    TableColumn<Industrielle, Integer> Industrielleprice;
+    @FXML
+    TableColumn<Industrielle, Integer> IndustrielleExeptedtime;
+    @FXML
+    TableColumn<Industrielle, Integer> IndustrielleSize;
+    @FXML
+    TableColumn<Industrielle, Integer> IndustrielleHourspent;
 
-    @FXML TableColumn <Industrielle, String> Industrielletype;
+    @FXML
+    TableColumn<Industrielle, String> Industrielletype;
 
 
-
-
-private Industrillelist industrillelist;
+    private Industrillelist industrillelist;
     private Kommerciellelist kommerciellelist;
     private Boligbyggerilist boligbyggerilist;
     private Vejbygninglist vejbygninglist;
@@ -84,12 +114,12 @@ private Industrillelist industrillelist;
         oversigt.show();
 
     }
-    public void OnButtonpreseedChange() throws IOException
-    {
+
+    public void OnButtonpreseedChange() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("ChangeDefault.fxml"));
         Parent root = fxmlLoader.load();
         ChangeDefaultController changeDefaultController = fxmlLoader.getController();
-      //  changeDefaultController.setProjektlist(projektlist);
+        //  changeDefaultController.setProjektlist(projektlist);
         Stage oversigt = new Stage();
         oversigt.setScene(new Scene(root, 600, 400));
         oversigt.setTitle("Oversigt");
@@ -97,10 +127,8 @@ private Industrillelist industrillelist;
 
     }
 
-    public void init(Boligbyggerilist boligbyggerilist)
-
-    {
-        this.boligbyggerilist=boligbyggerilist;
+    public void init(Boligbyggerilist boligbyggerilist) {
+        this.boligbyggerilist = boligbyggerilist;
         Size.setCellValueFactory(new PropertyValueFactory<>("størrelse"));
         Hourspent.setCellValueFactory(new PropertyValueFactory<>("mandeTimer"));
         Kitchens.setCellValueFactory(new PropertyValueFactory<>("antalKekkener"));
@@ -130,42 +158,35 @@ private Industrillelist industrillelist;
         IndustrilleTableView.getItems().addAll(industrillelist.getData());
 
 
-
-
     }
 
 
-    public void OnbuttonDeletepreesed(){
-            BoligByggeri selectedBolig = (BoligByggeri) BoligTableView.getSelectionModel().getSelectedItem();
-        VejBygning selectedVej = (VejBygning)  VejbygningTableView.getSelectionModel().getSelectedItem();
+    public void OnbuttonDeletepreesed() {
+        BoligByggeri selectedBolig = (BoligByggeri) BoligTableView.getSelectionModel().getSelectedItem();
+        VejBygning selectedVej = (VejBygning) VejbygningTableView.getSelectionModel().getSelectedItem();
         Industrielle selectedIndustri = (Industrielle) IndustrilleTableView.getSelectionModel().getSelectedItem();
         Kommercielle selectedKommerciell = (Kommercielle) kommercielleTableView.getSelectionModel().getSelectedItem();
 
 
-
-                boligbyggerilist.remove(selectedBolig);
-
+        boligbyggerilist.remove(selectedBolig);
 
 
-                vejbygninglist.remove(selectedVej);
+        vejbygninglist.remove(selectedVej);
 
 
-
-                industrillelist.remove(selectedIndustri);
-
+        industrillelist.remove(selectedIndustri);
 
 
-                kommerciellelist.remove(selectedKommerciell);
+        kommerciellelist.remove(selectedKommerciell);
 
-            refresh();
+        refresh();
 
 
     }
 
 
-
-    public void OnbuttonSavepressed( ) throws IOException {
-      boligbyggerilist.saveData();
+    public void OnbuttonSavepressed() throws IOException {
+        boligbyggerilist.saveData();
         kommerciellelist.saveKommercielledata();
         vejbygninglist.saveVejbygningData();
         industrillelist.saveindustrilleData();
@@ -173,10 +194,8 @@ private Industrillelist industrillelist;
     }
 
 
-    public void init(Vejbygninglist vejbygninglist)
-
-    {
-        this.vejbygninglist=vejbygninglist;
+    public void init(Vejbygninglist vejbygninglist) {
+        this.vejbygninglist = vejbygninglist;
         VejbygningSize.setCellValueFactory(new PropertyValueFactory<>("størrelse"));
         VejbygningHourspent.setCellValueFactory(new PropertyValueFactory<>("mandeTimer"));
         Længde.setCellValueFactory(new PropertyValueFactory<>("længde"));
@@ -224,10 +243,8 @@ private Industrillelist industrillelist;
     }
 
 
-    public void init(Kommerciellelist kommerciellelist)
-
-    {
-        this.kommerciellelist=kommerciellelist;
+    public void init(Kommerciellelist kommerciellelist) {
+        this.kommerciellelist = kommerciellelist;
         KommercielleHourspent.setCellValueFactory(new PropertyValueFactory<>("mandeTimer"));
         antalEtager.setCellValueFactory(new PropertyValueFactory<>("antalEtager"));
         kommercielletype.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -255,10 +272,8 @@ private Industrillelist industrillelist;
 
     }
 
-    public void init(Industrillelist industrillelist)
-
-    {
-        this.industrillelist=industrillelist;
+    public void init(Industrillelist industrillelist) {
+        this.industrillelist = industrillelist;
         IndustrielleHourspent.setCellValueFactory(new PropertyValueFactory<>("mandeTimer"));
         Industrielletype.setCellValueFactory(new PropertyValueFactory<>("type"));
         IndustrielleExeptedtime.setCellValueFactory(new PropertyValueFactory<>("forventetTid"));
@@ -267,15 +282,15 @@ private Industrillelist industrillelist;
         IndustrielleSize.setCellValueFactory(new PropertyValueFactory<>("størrelse"));
         IndustrilleTableView.getItems().addAll(industrillelist.getData());
     }
-    public void OnbuttonEditpreesed()throws IOException{
+
+    public void OnbuttonEditpreesed() throws IOException {
         //TODO: FIKS FOR ALLE TYPER
         BoligByggeri selectedBolig = BoligTableView.getSelectionModel().getSelectedItem();
         Kommercielle selectedKommercielle = kommercielleTableView.getSelectionModel().getSelectedItem();
         Industrielle selectedIndustrielle = IndustrilleTableView.getSelectionModel().getSelectedItem();
         VejBygning selectedVej = VejbygningTableView.getSelectionModel().getSelectedItem();
 //
-        if(selectedBolig != null)
-        {
+        if (selectedBolig != null) {
             boligbyggerilist.setSelectedBolig(selectedBolig);
             FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
             Parent root = fxmlLoader.load();
@@ -287,9 +302,7 @@ private Industrillelist industrillelist;
             oversigt.setScene(new Scene(root, 800, 670));
             oversigt.setTitle("Update");
             oversigt.show();
-        }
-        else if(selectedKommercielle != null)
-        {
+        } else if (selectedKommercielle != null) {
             kommerciellelist.setSelectedKommercielle(selectedKommercielle);
             FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("OpretKommercielle.fxml"));
             Parent root = fxmlLoader.load();
@@ -302,9 +315,7 @@ private Industrillelist industrillelist;
             oversigt.setTitle("Update Kommercielle");
             oversigt.show();
 
-        }
-        else if(selectedIndustrielle != null)
-        {
+        } else if (selectedIndustrielle != null) {
             industrillelist.setSelectedIndustrielle(selectedIndustrielle);
             FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("OpretIndustrielle.fxml"));
             Parent root = fxmlLoader.load();
@@ -316,9 +327,7 @@ private Industrillelist industrillelist;
             oversigt.setScene(new Scene(root, 800, 670));
             oversigt.setTitle("Update Industrielle");
             oversigt.show();
-        }
-        else if (selectedVej != null)
-        {
+        } else if (selectedVej != null) {
             vejbygninglist.setSelectedVejbygning(selectedVej);
             FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("OpretVejbygning.fxml"));
             Parent root = fxmlLoader.load();
@@ -334,8 +343,17 @@ private Industrillelist industrillelist;
 
     }
 
+    public void OnButtonEksportPressed() throws ParserException {
 
 
+        XmlJsonParser parser = new XmlJsonParser();
+        parser.toJson(boligbyggerilist, "eksportedbolig-data.json");
+        parser.toJson(vejbygninglist, "eksportedvejbygning-data.json");
+        parser.toJson(industrillelist, "eksportedindustri-data.json");
+        parser.toJson(kommerciellelist, "eksportedkommercielle-data.json");
+
+
+    }
 }
 
 
