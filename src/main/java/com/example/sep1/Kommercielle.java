@@ -9,8 +9,8 @@ public class Kommercielle extends Projekt implements Serializable
     private int antalEtager;
     private String type;
 
-    public Kommercielle(String navn, int forventetTid, int størrelse, int budget, int mandeTimer, int antalEtager, String type) {
-        super( navn, forventetTid, størrelse, budget, mandeTimer);
+    public Kommercielle(String navn,int budget, int forventetTid,int størrelse, int mandeTimer, int antalEtager, String type) {
+        super( navn, budget, forventetTid, størrelse, mandeTimer);
         this.antalEtager = antalEtager;
         this.type = type;
     }

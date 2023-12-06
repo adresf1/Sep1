@@ -11,6 +11,10 @@ public class Kommerciellelist implements Serializable {
     private DataSaver dataSaver;
 
 
+
+  private Kommercielle selectedKommercielle;
+
+
     public Kommerciellelist() {
         kommercielles = new ArrayList<>();
         dataSaver = new DataSaver();
@@ -32,6 +36,28 @@ public class Kommerciellelist implements Serializable {
 
    public void saveKommercielledata() throws IOException {
         dataSaver.saveKommercielledata(this);
+    }
+  public Kommercielle getSelectedKommercielle()
+  {
+    return selectedKommercielle;
+  }
+
+  public void setSelectedKommercielle(Kommercielle selectedKommercielle)
+  {
+    this.selectedKommercielle = selectedKommercielle;
+  }
+
+    public void UpdateKommercielle(Kommercielle nyKommercielle, Kommercielle selectedKommercielle)
+    {
+        for (Kommercielle element: kommercielles)
+        {
+            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+            if(element==selectedKommercielle)
+            {
+                element.update(nyKommercielle);
+                break;
+            }
+        }
     }
 
 }

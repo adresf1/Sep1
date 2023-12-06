@@ -41,6 +41,20 @@ public class CreatVejbygningcontroller {
         this.vejbygninglist=vejbygninglist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
 
+        if(vejbygninglist.getSelectedVejbygning()!=null)
+        {
+            VejBygning selectedVejbygning = vejbygninglist.getSelectedVejbygning();
+            Name.setText(selectedVejbygning.getNavn());
+            Price.setText("" + selectedVejbygning.getBudget());
+            Exeptedtime.setText("" + selectedVejbygning.getForventetTid());
+            Size.setText("" + selectedVejbygning.getStørrelse());
+            Hourspent.setText("" + selectedVejbygning.getMandeTimer());
+            Længde.setText(""+selectedVejbygning.getLængde());
+            Bredde.setText(""+selectedVejbygning.getBredde());
+            Bro.setText(""+selectedVejbygning.getBro());
+            Tunnel.setText(""+selectedVejbygning.getTunnel());
+        }
+
 
     }
 
@@ -56,27 +70,51 @@ public class CreatVejbygningcontroller {
     }
 
     public void opret(ActionEvent event) {
-        int size = Integer.parseInt(Size.getText());
-        int exepteced = Integer.parseInt(Exeptedtime.getText());
-        int hours = Integer.parseInt(Hourspent.getText());
+        if(vejbygninglist.getSelectedVejbygning()!=null)
+        {
+            int size = Integer.parseInt(Size.getText());
+            int exepteced = Integer.parseInt(Exeptedtime.getText());
+            int hours = Integer.parseInt(Hourspent.getText());
 
-        String name = Name.getText();
-        int pris = Integer.parseInt(Price.getText());
-        int lændge = Integer.parseInt(Længde.getText());
-        int bredde = Integer.parseInt(Bredde.getText());
-        int bro = Integer.parseInt(Bro.getText());
-         int tunnel = Integer.parseInt(Tunnel.getText());
+            String name = Name.getText();
+            int pris = Integer.parseInt(Price.getText());
+            int lændge = Integer.parseInt(Længde.getText());
+            int bredde = Integer.parseInt(Bredde.getText());
+            int bro = Integer.parseInt(Bro.getText());
+            int tunnel = Integer.parseInt(Tunnel.getText());
+
+            VejBygning vejBygning = new VejBygning(name, pris, exepteced, size,
+                hours, lændge, bredde, bro, tunnel);
+            vejbygninglist.UpdateVejbygning(vejBygning,vejbygninglist.getSelectedVejbygning());
+            oversigtController.refresh();
+
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+            vejbygninglist.setSelectedVejbygning(null);
+
+        }
+        else{
+            int size = Integer.parseInt(Size.getText());
+            int exepteced = Integer.parseInt(Exeptedtime.getText());
+            int hours = Integer.parseInt(Hourspent.getText());
+
+            String name = Name.getText();
+            int pris = Integer.parseInt(Price.getText());
+            int lændge = Integer.parseInt(Længde.getText());
+            int bredde = Integer.parseInt(Bredde.getText());
+            int bro = Integer.parseInt(Bro.getText());
+            int tunnel = Integer.parseInt(Tunnel.getText());
 
 
 
-        VejBygning vejBygning = new VejBygning(name, exepteced,pris,size, hours,lændge,bredde,bro,tunnel);
-        vejbygninglist.add(vejBygning);
-        oversigtController.refresh();
+            VejBygning vejBygning = new VejBygning(name, pris,exepteced,size, hours,lændge,bredde,bro,tunnel);
+            vejbygninglist.add(vejBygning);
+            oversigtController.refresh();
 
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+        }
     }
 }

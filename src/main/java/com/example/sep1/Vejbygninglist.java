@@ -11,6 +11,10 @@ public class Vejbygninglist implements Serializable {
     private DataSaver dataSaver;
 
 
+
+    private VejBygning selectedVejbygning;
+
+
     public Vejbygninglist() {
         vejBygnings = new ArrayList<>();
         dataSaver = new DataSaver();
@@ -28,8 +32,31 @@ public class Vejbygninglist implements Serializable {
         return vejBygnings;
     }
 
+    public VejBygning getSelectedVejbygning()
+    {
+        return selectedVejbygning;
+    }
+
+    public void setSelectedVejbygning(VejBygning selectedVejbygning)
+    {
+        this.selectedVejbygning = selectedVejbygning;
+    }
+
 
     public void saveVejbygningData() throws IOException {
         dataSaver.savevejbygningdata(this);
     }
+    public void UpdateVejbygning(VejBygning nyVejbygning, VejBygning selectedVejbygning)
+    {
+        for (VejBygning element: vejBygnings)
+        {
+            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+            if(element==selectedVejbygning)
+            {
+                element.update(nyVejbygning);
+                break;
+            }
+        }
+    }
+
 }

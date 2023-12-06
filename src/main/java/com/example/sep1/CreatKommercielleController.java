@@ -38,6 +38,17 @@ public class CreatKommercielleController {
         this.kommerciellelist=kommerciellelist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
 
+        if(kommerciellelist.getSelectedKommercielle()!=null)
+        {
+            Kommercielle selectedKommercielle = kommerciellelist.getSelectedKommercielle();
+            Name.setText(selectedKommercielle.getNavn());
+            Price.setText("" + selectedKommercielle.getBudget());
+            Exeptedtime.setText("" + selectedKommercielle.getForventetTid());
+            Size.setText("" + selectedKommercielle.getStørrelse());
+            Hourspent.setText("" + selectedKommercielle.getMandeTimer());
+            antalEtager.setText(""+selectedKommercielle.getAntalEtager());
+            type.setText(selectedKommercielle.getType());
+        }
 
     }
 
@@ -53,25 +64,47 @@ public class CreatKommercielleController {
     }
 
     public void opret(ActionEvent event) {
-        int size = Integer.parseInt(Size.getText());
-        int exepteced = Integer.parseInt(Exeptedtime.getText());
-        int hours = Integer.parseInt(Hourspent.getText());
+        if(kommerciellelist.getSelectedKommercielle()!=null)
+        {
+            int size = Integer.parseInt(Size.getText());
+            int exepteced = Integer.parseInt(Exeptedtime.getText());
+            int hours = Integer.parseInt(Hourspent.getText());
 
-        String name = Name.getText();
-        int pris = Integer.parseInt(Price.getText());
-        int antaletager = Integer.parseInt(antalEtager.getText());
-        String typen = type.getText();
+            String name = Name.getText();
+            int pris = Integer.parseInt(Price.getText());
+            int antaletager = Integer.parseInt(antalEtager.getText());
+            String typen = type.getText();
 
+            Kommercielle kommercielle = new Kommercielle(name, pris, exepteced,
+                size, hours, antaletager, typen);
+            kommerciellelist.UpdateKommercielle(kommercielle,kommerciellelist.getSelectedKommercielle());
+            oversigtController.refresh();
 
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+            kommerciellelist.setSelectedKommercielle(null);
 
-        Kommercielle kommercielle = new Kommercielle(name, exepteced,pris,size, hours,antaletager,typen);
-        kommerciellelist.add(kommercielle);
-        oversigtController.refresh();
+        }
+        else {
+            int size = Integer.parseInt(Size.getText());
+            int exepteced = Integer.parseInt(Exeptedtime.getText());
+            int hours = Integer.parseInt(Hourspent.getText());
 
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
+            String name = Name.getText();
+            int pris = Integer.parseInt(Price.getText());
+            int antaletager = Integer.parseInt(antalEtager.getText());
+            String typen = type.getText();
 
+            Kommercielle kommercielle = new Kommercielle(name, pris, exepteced,
+                size, hours, antaletager, typen);
+            kommerciellelist.add(kommercielle);
+            oversigtController.refresh();
 
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+
+        }
     }
 }

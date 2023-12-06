@@ -11,6 +11,10 @@ public class Industrillelist implements Serializable {
     private DataSaver dataSaver;
 
 
+
+    private Industrielle selectedIndustrielle;
+
+
     public Industrillelist() {
         industrielles = new ArrayList<>();
         dataSaver = new DataSaver();
@@ -31,5 +35,27 @@ public class Industrillelist implements Serializable {
 
     public void saveindustrilleData() throws IOException {
         dataSaver.saveindustrilleData(this);
+    }
+    public Industrielle getSelectedIndustrielle()
+    {
+        return selectedIndustrielle;
+    }
+
+    public void setSelectedIndustrielle(Industrielle selectedIndustrielle)
+    {
+        this.selectedIndustrielle = selectedIndustrielle;
+    }
+
+    public void UpdateIndustrielle(Industrielle nyIndustrielle, Industrielle selectedIndustrielle)
+    {
+        for (Industrielle element: industrielles)
+        {
+            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+            if(element==selectedIndustrielle)
+            {
+                element.update(nyIndustrielle);
+                break;
+            }
+        }
     }
 }

@@ -134,23 +134,6 @@ private Industrillelist industrillelist;
 
     }
 
-    public void OnbuttonEditpreesed()throws IOException{
-        BoligByggeri selectedprojectBolig = BoligTableView.getSelectionModel().getSelectedItem();
-        boligbyggerilist.setSelectedBolig(selectedprojectBolig);
-        FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
-        Parent root = fxmlLoader.load();
-
-        Stage oversigt = new Stage();
-        creatProjektController controller = fxmlLoader.getController();
-        controller.init(boligbyggerilist, this);
-
-        oversigt.setScene(new Scene(root, 1000, 800));
-        oversigt.setTitle("Update");
-        oversigt.show();
-
-
-
-    }
 
     public void OnbuttonDeletepreesed(){
             BoligByggeri selectedBolig = (BoligByggeri) BoligTableView.getSelectionModel().getSelectedItem();
@@ -267,7 +250,7 @@ private Industrillelist industrillelist;
         controller.init(industrillelist, this);
 
         oversigt.setScene(new Scene(root, 1000, 800));
-        oversigt.setTitle("OprettelseAfProjekt");
+        oversigt.setTitle("OprettelseAfProjekt Industrielle");
         oversigt.show();
 
     }
@@ -283,9 +266,90 @@ private Industrillelist industrillelist;
         Industrielleename.setCellValueFactory(new PropertyValueFactory<>("navn"));
         IndustrielleSize.setCellValueFactory(new PropertyValueFactory<>("størrelse"));
         IndustrilleTableView.getItems().addAll(industrillelist.getData());
+    }
+    public void OnbuttonEditpreesed()throws IOException{
+        //TODO: FIKS FOR ALLE TYPER
+        BoligByggeri selectedBolig = BoligTableView.getSelectionModel().getSelectedItem();
+        Kommercielle selectedKommercielle = kommercielleTableView.getSelectionModel().getSelectedItem();
+        Industrielle selectedIndustrielle = IndustrilleTableView.getSelectionModel().getSelectedItem();
+        VejBygning selectedVej = VejbygningTableView.getSelectionModel().getSelectedItem();
+//
+        if(selectedBolig != null)
+        {
+            boligbyggerilist.setSelectedBolig(selectedBolig);
+            FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage oversigt = new Stage();
+            creatProjektController controller = fxmlLoader.getController();
+            controller.init(boligbyggerilist, this);
+
+            oversigt.setScene(new Scene(root, 800, 670));
+            oversigt.setTitle("Update");
+            oversigt.show();
+        }
+        else if(selectedKommercielle != null)
+        {
+            kommerciellelist.setSelectedKommercielle(selectedKommercielle);
+            FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("OpretKommercielle.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage oversigt = new Stage();
+            CreatKommercielleController controller = fxmlLoader.getController();
+            controller.init(kommerciellelist, this);
+
+            oversigt.setScene(new Scene(root, 800, 670));
+            oversigt.setTitle("Update Kommercielle");
+            oversigt.show();
+
+        }
+        else if(selectedIndustrielle != null)
+        {
+            industrillelist.setSelectedIndustrielle(selectedIndustrielle);
+            FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("OpretIndustrielle.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage oversigt = new Stage();
+            CreatIndustrilleController controller = fxmlLoader.getController();
+            controller.init(industrillelist, this);
+
+            oversigt.setScene(new Scene(root, 800, 670));
+            oversigt.setTitle("Update Industrielle");
+            oversigt.show();
+        }
+        else if (selectedVej != null)
+        {
+            vejbygninglist.setSelectedVejbygning(selectedVej);
+            FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("OpretVejbygning.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage oversigt = new Stage();
+            CreatVejbygningcontroller controller = fxmlLoader.getController();
+            controller.init(vejbygninglist, this);
+
+            oversigt.setScene(new Scene(root, 800, 670));
+            oversigt.setTitle("Update Vejbygning");
+            oversigt.show();
+        }
 
     }
 
 
 
 }
+
+
+
+//    BoligByggeri selectedprojectBolig = BoligTableView.getSelectionModel().getSelectedItem();
+//        boligbyggerilist.setSelectedBolig(selectedprojectBolig);
+//            FXMLLoader fxmlLoader = new FXMLLoader(OversigtController.class.getResource("creatProjekt.fxml"));
+//    Parent root = fxmlLoader.load();
+//
+//    Stage oversigt = new Stage();
+//    creatProjektController controller = fxmlLoader.getController();
+//    controller.init(boligbyggerilist, this);
+//
+//    oversigt.setScene(new Scene(root, 1000, 800));
+//    oversigt.setTitle("Update");
+//    oversigt.show();
+
