@@ -3,6 +3,7 @@ package com.example.sep1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -27,16 +28,25 @@ public class CreatKommercielleController {
     @FXML
     TextField type;
 
+    @FXML ChoiceBox<String> Choicebox;
+
 
 
 
     private Kommerciellelist kommerciellelist;
     private  OversigtController oversigtController ;
+    private void defaultkommerciel()
+    {
+        Exeptedtime.setText("18");
+        antalEtager.setText("1");
+        Choicebox.setValue("False");
 
+    }
     public void init(Kommerciellelist kommerciellelist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
         this.kommerciellelist=kommerciellelist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
+        Choicebox.getItems().addAll("True","False");
 
         if(kommerciellelist.getSelectedKommercielle()!=null)
         {
@@ -49,6 +59,7 @@ public class CreatKommercielleController {
             antalEtager.setText(""+selectedKommercielle.getAntalEtager());
             type.setText(selectedKommercielle.getType());
         }
+        defaultkommerciel();
 
     }
 
@@ -74,9 +85,10 @@ public class CreatKommercielleController {
             int pris = Integer.parseInt(Price.getText());
             int antaletager = Integer.parseInt(antalEtager.getText());
             String typen = type.getText();
+            String Completed = Choicebox.getValue();
 
             Kommercielle kommercielle = new Kommercielle(name, pris, exepteced,
-                size, hours, antaletager, typen);
+                size, hours,Completed, antaletager, typen);
             kommerciellelist.UpdateKommercielle(kommercielle,kommerciellelist.getSelectedKommercielle());
             oversigtController.refresh();
 
@@ -95,9 +107,10 @@ public class CreatKommercielleController {
             int pris = Integer.parseInt(Price.getText());
             int antaletager = Integer.parseInt(antalEtager.getText());
             String typen = type.getText();
+            String Completed = Choicebox.getValue();
 
             Kommercielle kommercielle = new Kommercielle(name, pris, exepteced,
-                size, hours, antaletager, typen);
+                size, hours,Completed,antaletager, typen);
             kommerciellelist.add(kommercielle);
             oversigtController.refresh();
 

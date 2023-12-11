@@ -6,8 +6,8 @@ public class VejBygning extends Projekt{
     private int længde, bredde, bro, tunnel;
 
 
-    public VejBygning(String navn, int budget,  int forventetTid, int størrelse, int mandeTimer,  int længde, int bredde, int bro, int tunnel) {
-        super( navn, budget, forventetTid, størrelse, mandeTimer);
+    public VejBygning(String navn, int budget,  int forventetTid, int størrelse, int mandeTimer,String Choicebox,  int længde, int bredde, int bro, int tunnel) {
+        super( navn, budget, forventetTid, størrelse, mandeTimer,Choicebox);
         this.længde = længde;
         this.bredde = bredde;
         this.bro = bro;
@@ -54,6 +54,7 @@ public class VejBygning extends Projekt{
             this.setForventetTid(vejBygning.getForventetTid());
             this.setStørrelse(vejBygning.getStørrelse());
             this.setMandeTimer(vejBygning.getMandeTimer());
+            this.setChoicebox(vejBygning.getChoicebox());
             this.længde= vejBygning.getLængde();
             this.bredde=vejBygning.getBredde();
             this.bro=vejBygning.getBro();

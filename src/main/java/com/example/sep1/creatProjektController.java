@@ -3,6 +3,7 @@ package com.example.sep1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -28,16 +29,27 @@ public class creatProjektController {
     @FXML TextField Bathrooms;
     @FXML TextField OtherRooms;
     @FXML TextField Status;
+    @FXML ChoiceBox<String> Choicebox;
 
 
 
     private Boligbyggerilist boligbyggerilist;
     private  OversigtController oversigtController ;
+    private void defaultBolig()
+    {
+        Kitchens.setText("1");
+        Bathrooms.setText("1");
+        Status.setText("NEW");
+        OtherRooms.setText("1");
+        Choicebox.setValue("False");
+    }
 
     public void init(Boligbyggerilist boligbyggerilist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
        this.boligbyggerilist=boligbyggerilist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
+        //defaultBolig();
+        Choicebox.getItems().addAll("True","False");
 
         if(boligbyggerilist.getSelectedBolig() != null)
         {
@@ -51,7 +63,9 @@ public class creatProjektController {
             Bathrooms.setText("" + selectedbolig.getAntalBadeværelser());
             OtherRooms.setText("" + selectedbolig.getAndreVærelser());
             Status.setText(selectedbolig.getStatus());
+            Choicebox.getValue();
         }
+        defaultBolig();
 
 
 
@@ -80,9 +94,10 @@ public class creatProjektController {
             int pris = Integer.parseInt(Price.getText());
             int andreVærelser = Integer.parseInt(OtherRooms.getText());
             String Statu = Status.getText();
+            String Completed = Choicebox.getValue();
 
             BoligByggeri boligByggeri = new BoligByggeri(name, pris, exepteced,
-                    size, hours, antalKøkkener, antalBadeværelser, andreVærelser,
+                    size, Completed,hours, antalKøkkener, antalBadeværelser, andreVærelser,
                     Statu);
             boligbyggerilist.UpdateBolig(boligByggeri,boligbyggerilist.getSelectedBolig());
             oversigtController.refresh();
@@ -104,9 +119,11 @@ public class creatProjektController {
             int pris = Integer.parseInt(Price.getText());
             int andreVærelser = Integer.parseInt(OtherRooms.getText());
             String Statu = Status.getText();
+            String Completed = Choicebox.getValue();
+
 
             BoligByggeri boligByggeri = new BoligByggeri(name, pris, exepteced,
-                    size, hours, antalKøkkener, antalBadeværelser, andreVærelser,
+                    size,Completed ,hours, antalKøkkener, antalBadeværelser, andreVærelser,
                     Statu);
             boligbyggerilist.add(boligByggeri);
             oversigtController.refresh();

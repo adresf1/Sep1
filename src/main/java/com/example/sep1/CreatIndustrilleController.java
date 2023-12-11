@@ -3,6 +3,7 @@ package com.example.sep1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -26,16 +27,25 @@ public class CreatIndustrilleController {
     @FXML
     TextField type;
 
+    @FXML ChoiceBox<String> Choicebox;
+
 
 
 
     private Industrillelist industrillelist;
     private  OversigtController oversigtController ;
 
+    private void defaultindustri()
+    {
+        Exeptedtime.setText("30");
+        Choicebox.setValue("False");
+
+    }
     public void init(Industrillelist industrillelist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
         this.industrillelist=industrillelist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
+        Choicebox.getItems().addAll("True","False");
 
         if(industrillelist.getSelectedIndustrielle() != null)
         {
@@ -47,7 +57,7 @@ public class CreatIndustrilleController {
             Hourspent.setText("" + selectedIndustrielle.getMandeTimer());
             type.setText(selectedIndustrielle.getType());
         }
-
+        defaultindustri();
     }
 
 
@@ -70,9 +80,10 @@ public class CreatIndustrilleController {
             int size = Integer.parseInt(Size.getText());
             int hours = Integer.parseInt(Hourspent.getText());
             String industriltype = type.getText();
+            String Completed = Choicebox.getValue();
 
             Industrielle industrielle = new Industrielle(name,pris,exepteced,
-                size, hours,industriltype);
+                size, hours,Completed,industriltype);
             industrillelist.UpdateIndustrielle(industrielle,industrillelist.getSelectedIndustrielle());
             oversigtController.refresh();
 
@@ -90,10 +101,11 @@ public class CreatIndustrilleController {
             int exepteced = Integer.parseInt(Exeptedtime.getText());
             int hours = Integer.parseInt(Hourspent.getText());
             String industriltype = type.getText();
+            String Completed = Choicebox.getValue();
 
 
 
-            Industrielle industrielle = new Industrielle(name, pris,exepteced,size, hours,industriltype);
+            Industrielle industrielle = new Industrielle(name, pris,exepteced,size, hours,Completed,industriltype);
             industrillelist.add(industrielle);
             oversigtController.refresh();
 

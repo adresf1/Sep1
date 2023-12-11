@@ -8,8 +8,8 @@ public class Industrielle extends Projekt{
 
 
 
-    public Industrielle(String navn, int budget,int forventetTid, int størrelse, int mandeTimer, String type) {
-        super(navn, budget, forventetTid, størrelse , mandeTimer);
+    public Industrielle(String navn, int budget,int forventetTid, int størrelse, int mandeTimer,String Choicebox, String type) {
+        super(navn, budget, forventetTid, størrelse , mandeTimer,Choicebox);
         this.type = type;
     }
     public String getType() {
@@ -44,6 +44,7 @@ public class Industrielle extends Projekt{
             this.setMandeTimer(industrielle.getMandeTimer());
             this.setStørrelse(industrielle.getStørrelse());
             this.setForventetTid(industrielle.getForventetTid());
+            this.setChoicebox(industrielle.getChoicebox());
             this.type=industrielle.getType();
         }
     }

@@ -36,6 +36,8 @@ public class OversigtController {
     TableColumn<BoligByggeri, Integer> OtherRooms;
     @FXML
     TableColumn<BoligByggeri, String> boligstatus;
+    @FXML
+    TableColumn<BoligByggeri, String> CompletedBolig;
 
 
     @FXML
@@ -58,23 +60,28 @@ public class OversigtController {
     TableColumn<VejBygning, Integer> Bro;
     @FXML
     TableColumn<VejBygning, Integer> Tunnel;
+    @FXML
+    TableColumn<VejBygning, String> CompletedVejbyggeri;
 
     @FXML
     TableView<Kommercielle> kommercielleTableView;
     @FXML
-    TableColumn<VejBygning, String> Kommerciellename;
+    TableColumn<Kommercielle, String> Kommerciellename;
     @FXML
-    TableColumn<VejBygning, Integer> Kommercielleprice;
+    TableColumn<Kommercielle, Integer> Kommercielleprice;
     @FXML
-    TableColumn<VejBygning, Integer> KommerciellegExeptedtime;
+    TableColumn<Kommercielle, Integer> KommerciellegExeptedtime;
     @FXML
-    TableColumn<VejBygning, Integer> KommercielleSize;
+    TableColumn<Kommercielle, Integer> KommercielleSize;
     @FXML
-    TableColumn<VejBygning, Integer> KommercielleHourspent;
+    TableColumn<Kommercielle, Integer> KommercielleHourspent;
     @FXML
-    TableColumn<VejBygning, Integer> antalEtager;
+    TableColumn<Kommercielle, Integer> antalEtager;
     @FXML
-    TableColumn<VejBygning, String> kommercielletype;
+    TableColumn<Kommercielle, String> kommercielletype;
+    @FXML
+    TableColumn<Kommercielle, String> CompletedKommercielle;
+
 
     @FXML
     TableView<Industrielle> IndustrilleTableView;
@@ -91,6 +98,13 @@ public class OversigtController {
 
     @FXML
     TableColumn<Industrielle, String> Industrielletype;
+    @FXML
+    TableColumn<Industrielle, String> CompletedIndustrielle;
+
+    @FXML
+    TableView <Projekt> CompletionTableview;
+    @FXML
+
 
 
     private Industrillelist industrillelist;
@@ -110,7 +124,7 @@ public class OversigtController {
         controller.init(boligbyggerilist, this);
 
         oversigt.setScene(new Scene(root, 1000, 800));
-        oversigt.setTitle("OprettelseAfProjekt");
+        oversigt.setTitle("Oprettelse Af Bolig Projekt");
         oversigt.show();
 
     }
@@ -138,7 +152,7 @@ public class OversigtController {
         price.setCellValueFactory(new PropertyValueFactory<>("Budget"));
         name.setCellValueFactory(new PropertyValueFactory<>("navn"));
         boligstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-
+        CompletedBolig.setCellValueFactory(new PropertyValueFactory<>("Choicebox"));
         BoligTableView.getItems().addAll(boligbyggerilist.getData());
 
     }
@@ -205,6 +219,7 @@ public class OversigtController {
         VejbygningExeptedtime.setCellValueFactory(new PropertyValueFactory<>("forventetTid"));
         Vejbygningsprice.setCellValueFactory(new PropertyValueFactory<>("Budget"));
         Vejbygningname.setCellValueFactory(new PropertyValueFactory<>("navn"));
+        CompletedVejbyggeri.setCellValueFactory(new PropertyValueFactory<>("Choicebox"));
 
         VejbygningTableView.getItems().addAll(vejbygninglist.getData());
 
@@ -252,6 +267,7 @@ public class OversigtController {
         Kommercielleprice.setCellValueFactory(new PropertyValueFactory<>("Budget"));
         Kommerciellename.setCellValueFactory(new PropertyValueFactory<>("navn"));
         KommercielleSize.setCellValueFactory(new PropertyValueFactory<>("størrelse"));
+        CompletedKommercielle.setCellValueFactory((new PropertyValueFactory<>("Choicebox")));
         kommercielleTableView.getItems().addAll(kommerciellelist.getData());
 
     }
@@ -280,6 +296,7 @@ public class OversigtController {
         Industrielleprice.setCellValueFactory(new PropertyValueFactory<>("Budget"));
         Industrielleename.setCellValueFactory(new PropertyValueFactory<>("navn"));
         IndustrielleSize.setCellValueFactory(new PropertyValueFactory<>("størrelse"));
+        CompletedIndustrielle.setCellValueFactory(new PropertyValueFactory<>("Choicebox"));
         IndustrilleTableView.getItems().addAll(industrillelist.getData());
     }
 
@@ -354,6 +371,8 @@ public class OversigtController {
 
 
     }
+
+
 }
 
 

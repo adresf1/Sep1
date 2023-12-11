@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.OversigtController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sep1.OversigtController">
    <children>
       <HBox prefHeight="69.0" prefWidth="885.0">
          <children>
@@ -82,7 +82,7 @@
                      <children>
                         <TableView fx:id="BoligTableView" layoutX="-1.0" layoutY="3.0" prefHeight="741.0" prefWidth="993.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Completed" />
+                            <TableColumn fx:id="CompletedBolig" prefWidth="75.0" text="Completed" />
                             <TableColumn fx:id="name" prefWidth="93.99996185302734" text="Owner Name" />
                               <TableColumn fx:id="Exeptedtime" prefWidth="108.00001525878906" text="Expected Time" />
                               <TableColumn fx:id="price" prefWidth="100.0" text="Price" />
@@ -104,7 +104,7 @@
                      <children>
                         <TableView fx:id="IndustrilleTableView" prefHeight="623.0" prefWidth="987.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Completed" />
+                              <TableColumn fx:id="CompletedIndustrielle" prefWidth="75.0" text="Completed" />
                               <TableColumn fx:id="Industrielleename" prefWidth="93.99996185302734" text="Owner Name" />
                               <TableColumn fx:id="IndustrielleExeptedtime" prefWidth="93.99996185302734" text="Expected Time" />
                               <TableColumn fx:id="Industrielleprice" prefWidth="93.99996185302734" text="Price" />
@@ -123,7 +123,7 @@
                      <children>
                         <TableView fx:id="kommercielleTableView" prefHeight="623.0" prefWidth="861.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Completed" />
+                              <TableColumn fx:id="CompletedKommercielle" prefWidth="75.0" text="Completed" />
                               <TableColumn fx:id="Kommerciellename" prefWidth="93.99996185302734" text="Owner Name" />
                               <TableColumn fx:id="KommerciellegExeptedtime" prefWidth="93.99996185302734" text="Expected Time" />
                               <TableColumn fx:id="Kommercielleprice" prefWidth="93.99996185302734" text="Price" />
@@ -143,7 +143,7 @@
                      <children>
                         <TableView fx:id="VejbygningTableView" prefHeight="605.0" prefWidth="1030.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Completed" />
+                              <TableColumn fx:id="CompletedVejbyggeri" prefWidth="75.0" text="Completed" />
                               <TableColumn fx:id="Vejbygningname" prefWidth="93.99996185302734" text="Owner Name" />
                               <TableColumn fx:id="VejbygningExeptedtime" prefWidth="93.99996185302734" text="Expected Time" />
                               <TableColumn fx:id="Vejbygningsprice" prefWidth="93.99996185302734" text="Price" />
@@ -159,7 +159,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Completed">
+            <Tab text="Completion">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

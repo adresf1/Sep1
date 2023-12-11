@@ -3,6 +3,7 @@ package com.example.sep1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -30,16 +31,25 @@ public class CreatVejbygningcontroller {
 
     @FXML
     TextField Tunnel;
+    @FXML
+    ChoiceBox<String> Choicebox;
 
 
 
     private Vejbygninglist vejbygninglist;
     private  OversigtController oversigtController ;
-
+private void defaultVejbyggeri()
+{
+    Exeptedtime.setText("18");
+    Bro.setText("0");
+    Tunnel.setText("0");
+    Choicebox.setValue("False");
+}
     public void init(Vejbygninglist vejbygninglist, OversigtController oversigtController) {
         this.oversigtController=oversigtController;
         this.vejbygninglist=vejbygninglist;
         //    ProjekType.setText(projektlist.getKommercielledefault().getType());
+        Choicebox.getItems().addAll("True","False");
 
         if(vejbygninglist.getSelectedVejbygning()!=null)
         {
@@ -54,8 +64,7 @@ public class CreatVejbygningcontroller {
             Bro.setText(""+selectedVejbygning.getBro());
             Tunnel.setText(""+selectedVejbygning.getTunnel());
         }
-
-
+        defaultVejbyggeri();
     }
 
 
@@ -64,9 +73,6 @@ public class CreatVejbygningcontroller {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
-    }
-    private void setDefault()
-    {
     }
 
     public void opret(ActionEvent event) {
@@ -82,9 +88,10 @@ public class CreatVejbygningcontroller {
             int bredde = Integer.parseInt(Bredde.getText());
             int bro = Integer.parseInt(Bro.getText());
             int tunnel = Integer.parseInt(Tunnel.getText());
+            String Completed = Choicebox.getValue();
 
             VejBygning vejBygning = new VejBygning(name, pris, exepteced, size,
-                hours, lændge, bredde, bro, tunnel);
+                hours,Completed,lændge, bredde, bro, tunnel);
             vejbygninglist.UpdateVejbygning(vejBygning,vejbygninglist.getSelectedVejbygning());
             oversigtController.refresh();
 
@@ -105,10 +112,11 @@ public class CreatVejbygningcontroller {
             int bredde = Integer.parseInt(Bredde.getText());
             int bro = Integer.parseInt(Bro.getText());
             int tunnel = Integer.parseInt(Tunnel.getText());
+            String Completed = Choicebox.getValue();
 
 
 
-            VejBygning vejBygning = new VejBygning(name, pris,exepteced,size, hours,lændge,bredde,bro,tunnel);
+            VejBygning vejBygning = new VejBygning(name, pris,exepteced,size, hours,Completed,lændge,bredde,bro,tunnel);
             vejbygninglist.add(vejBygning);
             oversigtController.refresh();
 

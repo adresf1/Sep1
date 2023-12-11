@@ -2,19 +2,23 @@ package com.example.sep1;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javafx.scene.control.ChoiceBox;
 
 public abstract class Projekt implements Serializable  {
 
     private int  forventetTid, størrelse, budget, mandeTimer, matriealeOmkostninger;
     private String navn, projektType;
 
-    public Projekt(String navn, int budget, int forventetTid, int størrelse, int mandeTimer) {
+    private String Choicebox;
+
+
+    public Projekt(String navn, int budget, int forventetTid, int størrelse, int mandeTimer, String Choicebox) {
         this.navn=navn;
         this.forventetTid = forventetTid;
-
         this.størrelse = størrelse;
         this.budget = budget;
         this.mandeTimer = mandeTimer;
+        this.Choicebox = Choicebox;
 
     }
     public void setProjekt( int forventetTid, int størrelse, int budget, int mandeTimer) {
@@ -80,6 +84,16 @@ public abstract class Projekt implements Serializable  {
 
     public String getNavn() {
         return navn;
+    }
+
+    public String getChoicebox()
+    {
+        return Choicebox;
+    }
+
+    public void setChoicebox(String choicebox)
+    {
+        Choicebox = choicebox;
     }
 
     public abstract void update(Projekt other);

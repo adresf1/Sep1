@@ -9,17 +9,17 @@ public class Kommercielle extends Projekt implements Serializable
     private int antalEtager;
     private String type;
 
-    public Kommercielle(String navn,int budget, int forventetTid,int størrelse, int mandeTimer, int antalEtager, String type) {
-        super( navn, budget, forventetTid, størrelse, mandeTimer);
+    public Kommercielle(String navn,int budget, int forventetTid,int størrelse, int mandeTimer,String Choicebox, int antalEtager, String type) {
+        super( navn, budget, forventetTid, størrelse, mandeTimer,Choicebox);
         this.antalEtager = antalEtager;
         this.type = type;
     }
-    public Kommercielle(int budget, int forventetTid, int størrelse, String type, int antalEtager) {
-        // Kalder superklassens konstruktør for at initialisere fælles attributter
-        super("Default Navn", budget, forventetTid, størrelse, 0);
-        this.antalEtager = antalEtager;
-        this.type = type;
-    }
+//    public Kommercielle(int budget, int forventetTid, int størrelse, String type, int antalEtager) {
+//        // Kalder superklassens konstruktør for at initialisere fælles attributter
+//        super("Default Navn", budget, forventetTid, størrelse, 0);
+//        this.antalEtager = antalEtager;
+//        this.type = type;
+//    }
 
 
 public void setBudgetForKommercielle(int budget)
@@ -76,6 +76,7 @@ public void setAntalEtager(int antalEtager)
             this.setMandeTimer(kommercielle.getMandeTimer());
             this.setForventetTid(kommercielle.getForventetTid());
             this.setStørrelse(kommercielle.getStørrelse());
+            this.setChoicebox(kommercielle.getChoicebox());
             this.antalEtager = kommercielle.getAntalEtager();
             this.type = kommercielle.getType();
         }

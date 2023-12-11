@@ -1,44 +1,26 @@
 {
   "kommercielles": [
     {
-      "antalEtager": 2,
-      "type": "Flyselskab",
-      "forventetTid": 24,
-      "størrelse": 750,
-      "budget": 500000,
-      "mandeTimer": 300,
+      "antalEtager": 1,
+      "type": "Iii",
+      "forventetTid": 18,
+      "størrelse": 250,
+      "budget": 240000,
+      "mandeTimer": 450,
       "matriealeOmkostninger": 0,
-      "navn": "Aarhus Airport"
-    },
-    {
-      "antalEtager": 10,
-      "type": "Hotel",
-      "forventetTid": 24,
-      "størrelse": 380,
-      "budget": 1000000,
-      "mandeTimer": 150,
-      "matriealeOmkostninger": 0,
-      "navn": "Zleep Hotel"
+      "navn": "Viby If",
+      "Choicebox": "True"
     },
     {
       "antalEtager": 1,
-      "type": "Detail",
+      "type": "Hotel",
       "forventetTid": 18,
-      "størrelse": 180,
-      "budget": 200000,
+      "størrelse": 250,
+      "budget": 250000,
       "mandeTimer": 100,
       "matriealeOmkostninger": 0,
-      "navn": "Føtex"
-    },
-    {
-      "antalEtager": 3,
-      "type": "Varehus",
-      "forventetTid": 24,
-      "størrelse": 400,
-      "budget": 3000000,
-      "mandeTimer": 180,
-      "matriealeOmkostninger": 0,
-      "navn": "POST NORD"
+      "navn": "GIF",
+      "Choicebox": "False"
     }
   ],
   "dataSaver": {}

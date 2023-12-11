@@ -1,5 +1,7 @@
 package com.example.sep1;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,13 +9,13 @@ public class  BoligByggeri extends Projekt {
     private int antalKekkener, antalBadeværelser, andreVærelser;
     private String status;
 
-    public BoligByggeri(String navn, int budget, int forventetTid, int størrelse, int mandeTimer, int antalKekkener, int antalBadeværelser, int andreVærelser, String status) {
-        super(navn, budget, forventetTid, størrelse, mandeTimer);
+
+    public BoligByggeri(String navn, int budget, int forventetTid, int størrelse,String Choicebox, int mandeTimer, int antalKekkener, int antalBadeværelser, int andreVærelser, String status) {
+        super(navn, budget, forventetTid, størrelse, mandeTimer, Choicebox);
         this.antalKekkener = antalKekkener;
         this.antalBadeværelser = antalBadeværelser;
         this.andreVærelser = andreVærelser;
         this.status=status;
-
     }
 
     public int getAntalKekkener() {
@@ -31,6 +33,7 @@ public class  BoligByggeri extends Projekt {
     public String getStatus() {
         return status;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -56,6 +59,7 @@ public class  BoligByggeri extends Projekt {
             this.setMandeTimer(boligByggeri.getMandeTimer());
             this.setForventetTid(boligByggeri.getForventetTid());
             this.setStørrelse(boligByggeri.getStørrelse());
+            this.setChoicebox(boligByggeri.getChoicebox());
             this.antalKekkener = boligByggeri.getAntalKekkener();
             this.antalBadeværelser = boligByggeri.getAntalBadeværelser();
             this.andreVærelser = boligByggeri.getAndreVærelser();
