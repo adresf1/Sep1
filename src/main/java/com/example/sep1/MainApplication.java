@@ -30,21 +30,21 @@ public class MainApplication extends Application {
         FileInputStream fileInputStream3 = new FileInputStream("dataindustri.bin");
         ObjectInputStream objectInputStream3 = new ObjectInputStream(fileInputStream3);
 
-        /*
+
         Boligbyggerilist boligbyggerilist = (Boligbyggerilist) objectInputStream.readObject();
         Vejbygninglist vejbygninglist = (Vejbygninglist) objectInputStream2.readObject();
         Kommerciellelist kommerciellelist=(Kommerciellelist) objectInputStream1.readObject();
         Industrillelist industrillelist=(Industrillelist) objectInputStream3.readObject();
 
 
-         */
 
 
 
-        controller.init(new Boligbyggerilist() );
-        controller.init(new Vejbygninglist() );
-        controller.init( new Kommerciellelist());
-        controller.init(new Industrillelist() );
+
+        controller.init(boligbyggerilist);
+        controller.init(vejbygninglist);
+        controller.init(kommerciellelist);
+        controller.init(industrillelist);
 
 
 

@@ -1,4 +1,41 @@
 {
-  "vejBygnings": [],
+  "vejBygnings": [
+    {
+      "længde": 25000,
+      "bredde": 500,
+      "bro": 1,
+      "tunnel": 1,
+      "forventetTid": 24,
+      "størrelse": 0,
+      "budget": 3800000,
+      "mandeTimer": 300,
+      "matriealeOmkostninger": 0,
+      "navn": "A45 sydgående"
+    },
+    {
+      "længde": 1000,
+      "bredde": 250,
+      "bro": 1,
+      "tunnel": 1,
+      "forventetTid": 18,
+      "størrelse": 0,
+      "budget": 2450000,
+      "mandeTimer": 180,
+      "matriealeOmkostninger": 0,
+      "navn": "Lillebælt "
+    },
+    {
+      "længde": 1000,
+      "bredde": 150,
+      "bro": 1,
+      "tunnel": 1,
+      "forventetTid": 12,
+      "størrelse": 0,
+      "budget": 1000000,
+      "mandeTimer": 200,
+      "matriealeOmkostninger": 0,
+      "navn": "HerningMotorvejen"
+    }
+  ],
   "dataSaver": {}
 }

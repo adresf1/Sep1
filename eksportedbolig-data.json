@@ -1,16 +1,76 @@
 {
   "boligByggeriss": [
     {
-      "antalKekkener": 4,
-      "antalBadeværelser": 4,
-      "andreVærelser": 5,
-      "status": "b",
-      "forventetTid": 4,
-      "størrelse": 4,
-      "budget": 33,
-      "mandeTimer": 4,
+      "antalKekkener": 1,
+      "antalBadeværelser": 1,
+      "andreVærelser": 3,
+      "status": "NEW",
+      "forventetTid": 9,
+      "størrelse": 180,
+      "budget": 250000,
+      "mandeTimer": 100,
       "matriealeOmkostninger": 0,
-      "navn": "jh"
+      "navn": "Grøfthøjparken 257"
+    },
+    {
+      "antalKekkener": 1,
+      "antalBadeværelser": 1,
+      "andreVærelser": 4,
+      "status": "RENOVATION",
+      "forventetTid": 12,
+      "størrelse": 200,
+      "budget": 180000,
+      "mandeTimer": 120,
+      "matriealeOmkostninger": 0,
+      "navn": "Umagertoften 45"
+    },
+    {
+      "antalKekkener": 1,
+      "antalBadeværelser": 1,
+      "andreVærelser": 2,
+      "status": "NEW",
+      "forventetTid": 12,
+      "størrelse": 80,
+      "budget": 90000,
+      "mandeTimer": 75,
+      "matriealeOmkostninger": 0,
+      "navn": "Husumvej 57"
+    },
+    {
+      "antalKekkener": 1,
+      "antalBadeværelser": 1,
+      "andreVærelser": 2,
+      "status": "NEW",
+      "forventetTid": 12,
+      "størrelse": 95,
+      "budget": 100000,
+      "mandeTimer": 70,
+      "matriealeOmkostninger": 0,
+      "navn": "Frederiks Alle 30"
+    },
+    {
+      "antalKekkener": 1,
+      "antalBadeværelser": 1,
+      "andreVærelser": 3,
+      "status": "RENOVATION",
+      "forventetTid": 12,
+      "størrelse": 110,
+      "budget": 120000,
+      "mandeTimer": 100,
+      "matriealeOmkostninger": 0,
+      "navn": "Karamagertoften 120"
+    },
+    {
+      "antalKekkener": 1,
+      "antalBadeværelser": 2,
+      "andreVærelser": 5,
+      "status": "NEW",
+      "forventetTid": 12,
+      "størrelse": 180,
+      "budget": 244500,
+      "mandeTimer": 120,
+      "matriealeOmkostninger": 0,
+      "navn": "UsagerVej 23"
     }
   ],
   "dataSaver": {}

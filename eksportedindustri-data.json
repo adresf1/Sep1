@@ -1,4 +1,32 @@
 {
-  "industrielles": [],
+  "industrielles": [
+    {
+      "type": "Warehouse",
+      "forventetTid": 30,
+      "størrelse": 500,
+      "budget": 4500000,
+      "mandeTimer": 300,
+      "matriealeOmkostninger": 0,
+      "navn": "Arla"
+    },
+    {
+      "type": "Warehouse",
+      "forventetTid": 36,
+      "størrelse": 750,
+      "budget": 5000000,
+      "mandeTimer": 365,
+      "matriealeOmkostninger": 0,
+      "navn": "GLS Varehus"
+    },
+    {
+      "type": "Manufacturing ",
+      "forventetTid": 24,
+      "størrelse": 500,
+      "budget": 500000,
+      "mandeTimer": 275,
+      "matriealeOmkostninger": 0,
+      "navn": "Vejen Minefabrik"
+    }
+  ],
   "dataSaver": {}
 }
