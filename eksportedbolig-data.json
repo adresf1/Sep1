@@ -11,6 +11,18 @@
       "mandeTimer": 1,
       "navn": "Adres22",
       "Choicebox": "False"
+    },
+    {
+      "antalKekkener": 1,
+      "antalBadeværelser": 1,
+      "andreVærelser": 1,
+      "status": "NEW",
+      "forventetTid": 1,
+      "størrelse": 1,
+      "budget": 1,
+      "mandeTimer": 1,
+      "navn": "sd",
+      "Choicebox": "False"
     }
   ],
   "dataSaver": {}

@@ -1,6 +1,5 @@
 package com.example.sep1;
 
-import javafx.css.Size;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -118,7 +117,7 @@ public class OversigtController {
         Parent root = fxmlLoader.load();
 
         Stage oversigt = new Stage();
-        creatProjektController controller = fxmlLoader.getController();
+        creatBoligByggeriController controller = fxmlLoader.getController();
         controller.init(boligbyggerilist, this);
 
         oversigt.setScene(new Scene(root, 1000, 800));
@@ -310,7 +309,7 @@ public class OversigtController {
             Parent root = fxmlLoader.load();
 
             Stage oversigt = new Stage();
-            creatProjektController controller = fxmlLoader.getController();
+            creatBoligByggeriController controller = fxmlLoader.getController();
             controller.init(boligbyggerilist, this);
 
             oversigt.setScene(new Scene(root, 800, 670));

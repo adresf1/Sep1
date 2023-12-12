@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class creatProjektController {
+public class creatBoligByggeriController {
 
 
     @FXML
