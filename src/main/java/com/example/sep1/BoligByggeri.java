@@ -43,10 +43,7 @@ public class  BoligByggeri extends Projekt {
         return antalKekkener == that.antalKekkener && antalBadeværelser == that.antalBadeværelser && andreVærelser == that.andreVærelser;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(antalKekkener, antalBadeværelser, andreVærelser);
-    }
+
 
     public void update(Projekt other)
     {

@@ -41,9 +41,11 @@ public class MainApplication extends Application {
 
 
 
+
+
         controller.init(boligbyggerilist);
-        controller.init(vejbygninglist);
-        controller.init(kommerciellelist);
+        controller.init( vejbygninglist);
+        controller.init( kommerciellelist);
         controller.init(industrillelist);
 
 

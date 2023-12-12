@@ -2,24 +2,12 @@
   "kommercielles": [
     {
       "antalEtager": 1,
-      "type": "Iii",
+      "type": "new",
       "forventetTid": 18,
-      "størrelse": 250,
-      "budget": 240000,
-      "mandeTimer": 450,
-      "matriealeOmkostninger": 0,
-      "navn": "Viby If",
-      "Choicebox": "True"
-    },
-    {
-      "antalEtager": 1,
-      "type": "Hotel",
-      "forventetTid": 18,
-      "størrelse": 250,
-      "budget": 250000,
-      "mandeTimer": 100,
-      "matriealeOmkostninger": 0,
-      "navn": "GIF",
+      "størrelse": 1,
+      "budget": 1,
+      "mandeTimer": 1,
+      "navn": "adresk",
       "Choicebox": "False"
     }
   ],

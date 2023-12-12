@@ -51,7 +51,7 @@ public class Kommerciellelist implements Serializable {
     {
         for (Kommercielle element: kommercielles)
         {
-            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+
             if(element==selectedKommercielle)
             {
                 element.update(nyKommercielle);

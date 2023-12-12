@@ -50,7 +50,7 @@ public class Industrillelist implements Serializable {
     {
         for (Industrielle element: industrielles)
         {
-            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+
             if(element==selectedIndustrielle)
             {
                 element.update(nyIndustrielle);

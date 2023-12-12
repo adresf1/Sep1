@@ -14,34 +14,7 @@ public class Kommercielle extends Projekt implements Serializable
         this.antalEtager = antalEtager;
         this.type = type;
     }
-//    public Kommercielle(int budget, int forventetTid, int størrelse, String type, int antalEtager) {
-//        // Kalder superklassens konstruktør for at initialisere fælles attributter
-//        super("Default Navn", budget, forventetTid, størrelse, 0);
-//        this.antalEtager = antalEtager;
-//        this.type = type;
-//    }
 
-
-public void setBudgetForKommercielle(int budget)
-{
-    setBudget(budget);
-}
-public void setForventettidKommercielle(int forventetTid)
-{
-    setForventetTid(forventetTid);
-}
-public void setStørrelseKommercielle(int størrelse)
-{
-    setStørrelse(størrelse);
-}
-public void setTypeKommercielle(String type)
-{
-    setProjektType(type);
-}
-public void setAntalEtager(int antalEtager)
-{
-    this.antalEtager = antalEtager;
-}
 
     public String getType()
     {
@@ -61,10 +34,7 @@ public void setAntalEtager(int antalEtager)
         return antalEtager == that.antalEtager && Objects.equals(type, that.type);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(antalEtager, type);
-    }
+
 
     public void update(Projekt other)
     {

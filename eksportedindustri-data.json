@@ -1,4 +1,14 @@
 {
-  "industrielles": [],
+  "industrielles": [
+    {
+      "type": "asd",
+      "forventetTid": 30,
+      "størrelse": 1,
+      "budget": 1,
+      "mandeTimer": 1,
+      "navn": "adres4",
+      "Choicebox": "False"
+    }
+  ],
   "dataSaver": {}
 }

@@ -6,8 +6,8 @@ import javafx.scene.control.ChoiceBox;
 
 public abstract class Projekt implements Serializable  {
 
-    private int  forventetTid, størrelse, budget, mandeTimer, matriealeOmkostninger;
-    private String navn, projektType;
+    private int  forventetTid, størrelse, budget, mandeTimer;
+    private String navn;
 
     private String Choicebox;
 
@@ -21,78 +21,52 @@ public abstract class Projekt implements Serializable  {
         this.Choicebox = Choicebox;
 
     }
-    public void setProjekt( int forventetTid, int størrelse, int budget, int mandeTimer) {
-
-        this.forventetTid = forventetTid;
-        this.størrelse = størrelse;
-        setBudget(this.budget);
-        this.mandeTimer = mandeTimer;
-
-    }
-    public void setBudget(int Nybudget)
-    {
-        this.budget = Nybudget;
-    }
-
-    public void setForventetTid(int forventetTid)
-    {
-        this.forventetTid = forventetTid;
-    }
-
-    public void setStørrelse(int størrelse)
-    {
-        this.størrelse = størrelse;
-    }
-
-    public void setProjektType(String projektType)
-    {
-        this.projektType = projektType;
-    }
 
     public int getForventetTid() {
         return forventetTid;
+    }
+
+    public void setForventetTid(int forventetTid) {
+        this.forventetTid = forventetTid;
     }
 
     public int getStørrelse() {
         return størrelse;
     }
 
+    public void setStørrelse(int størrelse) {
+        this.størrelse = størrelse;
+    }
+
     public int getBudget() {
         return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
     }
 
     public int getMandeTimer() {
         return mandeTimer;
     }
 
-    public int getMatriealeOmkostninger() {
-        return matriealeOmkostninger;
-    }
-
-    public String getProjektType() {
-        return projektType;
-    }
-    public void setMandeTimer(int mandeTimer)
-    {
+    public void setMandeTimer(int mandeTimer) {
         this.mandeTimer = mandeTimer;
     }
-    public void setNavn(String navn)
-    {
-        this.navn = navn;
-    }
-
 
     public String getNavn() {
         return navn;
     }
 
-    public String getChoicebox()
-    {
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public String getChoicebox() {
         return Choicebox;
     }
 
-    public void setChoicebox(String choicebox)
-    {
+    public void setChoicebox(String choicebox) {
         Choicebox = choicebox;
     }
 

@@ -1,4 +1,17 @@
 {
-  "vejBygnings": [],
+  "vejBygnings": [
+    {
+      "længde": 1,
+      "bredde": 1,
+      "bro": 0,
+      "tunnel": 0,
+      "forventetTid": 18,
+      "størrelse": 1,
+      "budget": 1,
+      "mandeTimer": 1,
+      "navn": "ads",
+      "Choicebox": "False"
+    }
+  ],
   "dataSaver": {}
 }

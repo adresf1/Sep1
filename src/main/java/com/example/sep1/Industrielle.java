@@ -29,10 +29,7 @@ public class Industrielle extends Projekt{
         return Objects.equals(type, that.type);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(type);
-    }
+
 
     public void update(Projekt other)
     {

@@ -38,10 +38,6 @@ public class VejBygning extends Projekt{
         return længde == that.længde && bredde == that.bredde && bro == that.bro && tunnel == that.tunnel;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(længde, bredde, bro, tunnel);
-    }
 
 
     public void update(Projekt other)

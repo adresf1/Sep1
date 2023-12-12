@@ -50,7 +50,7 @@ public class Boligbyggerilist implements Serializable {
     {
         for (BoligByggeri element: boligByggeriss)
         {
-            //if(element.getNavn().equalsIgnoreCase(selectedBolig.getNavn()))
+
             if(element==selectedBolig)
             {
                 element.update(nybolig);
