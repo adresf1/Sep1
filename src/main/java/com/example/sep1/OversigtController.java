@@ -172,26 +172,16 @@ public class OversigtController {
 
 
     public void OnbuttonDeletepreesed() {
-        BoligByggeri selectedBolig = (BoligByggeri) BoligTableView.getSelectionModel().getSelectedItem();
+        BoligByggeri selectedBolig = (BoligByggeri) BoligTableView.getSelectionModel().getSelectedItem(); //
         VejBygning selectedVej = (VejBygning) VejbygningTableView.getSelectionModel().getSelectedItem();
         Industrielle selectedIndustri = (Industrielle) IndustrilleTableView.getSelectionModel().getSelectedItem();
         Kommercielle selectedKommerciell = (Kommercielle) kommercielleTableView.getSelectionModel().getSelectedItem();
 
-
         boligbyggerilist.remove(selectedBolig);
-
-
         vejbygninglist.remove(selectedVej);
-
-
         industrillelist.remove(selectedIndustri);
-
-
         kommerciellelist.remove(selectedKommerciell);
-
         refresh();
-
-
     }
 
 

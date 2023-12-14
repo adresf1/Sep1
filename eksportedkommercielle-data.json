@@ -1,13 +1,13 @@
 {
   "kommercielles": [
     {
-      "antalEtager": 1,
-      "type": "new",
+      "antalEtager": 5,
+      "type": "Hotel",
       "forventetTid": 18,
-      "størrelse": 1,
-      "budget": 1,
-      "mandeTimer": 1,
-      "navn": "adresk",
+      "størrelse": 250,
+      "budget": 750000,
+      "mandeTimer": 200,
+      "navn": "Zleep syd",
       "Choicebox": "False"
     }
   ],

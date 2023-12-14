@@ -1,12 +1,21 @@
 {
   "industrielles": [
     {
-      "type": "asd",
+      "type": "Warehouse",
       "forventetTid": 30,
-      "størrelse": 1,
-      "budget": 1,
-      "mandeTimer": 1,
-      "navn": "adres4",
+      "størrelse": 450,
+      "budget": 8000000,
+      "mandeTimer": 600,
+      "navn": "POST NORD",
+      "Choicebox": "False"
+    },
+    {
+      "type": "Industri",
+      "forventetTid": 30,
+      "størrelse": 850,
+      "budget": 7500000,
+      "mandeTimer": 650,
+      "navn": "Skive kaserne",
       "Choicebox": "False"
     }
   ],

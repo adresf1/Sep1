@@ -5,9 +5,9 @@ public class JSON_Saver
 {
   public static void main(String[] args)
   {
-    Spark.port(5050);
+    Spark.port(5050); //Spark sender informationer på port 5050, samme port som vores website kører på
 
-    Spark.get("//eksportedbolig-data.json", (request, response) -> {
+    Spark.get("//eksportedbolig-data.json", (request, response) -> {         //
       String jsonData = JsonDataLoader.loadJsonData("eksportedbolig-data.json");
       response.type("application/json");
       return jsonData;
